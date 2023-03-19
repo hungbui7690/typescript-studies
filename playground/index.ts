@@ -1,13 +1,13 @@
 /*
-  Our First Type Annotation
-  > pic: type-annotation
-
-  (***) when we use movieTitle. > it will show just string methods since we define this variable as string
+  Working With Numbers & Booleans
+  - pic: number-boolean
 
 */
 
+let numCatLives: number = 9
+numCatLives++
+numCatLives = 'zero' // complain
 
-let movieTitle: string = 'Amadeus'
-movieTitle = 'Arrivals'
-movieTitle = 9 // complain
-movieTitle.
+let gameOver: boolean = false
+gameOver = true
+gameOver = 'true' // complain
