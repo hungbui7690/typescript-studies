@@ -1,5 +1,6 @@
 /*
-  Connecting to LocalStorage P2
+  Todo List Finishing Touches
+  - we want to work with those checkboxes
 
 */
 
@@ -16,14 +17,21 @@ const input = document.getElementById('todo-input')! as HTMLInputElement
 const list = document.querySelector('ul')
 
 // (***)
-todos.forEach((todo) => {
-  createTodo(todo)
+window.addEventListener('DOMContentLoaded', () => {
+  todos.forEach((todo) => {
+    createTodo(todo)
+  })
 })
 
 function readTodos(): Todo[] {
   const todosJSON = localStorage.getItem('todos')
   if (!todosJSON) return []
   return JSON.parse(todosJSON)
+}
+
+// (***)
+function saveTodos(todos: Todo[]) {
+  localStorage.setItem('todos', JSON.stringify(todos))
 }
 
 function handleSubmit(e: SubmitEvent) {
@@ -34,9 +42,8 @@ function handleSubmit(e: SubmitEvent) {
 
   createTodo(newTodo)
 
-  // (***) switch these 2 lines
   todos.push(newTodo)
-  localStorage.setItem('todos', JSON.stringify(todos))
+  saveTodos(todos)
 }
 
 form.addEventListener('submit', handleSubmit)
@@ -46,7 +53,14 @@ function createTodo(todo: Todo) {
   const newLI = document.createElement('li')
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
+  checkbox.checked = todo.completed // (***)
   newLI.textContent = todo.text
+
+  // (***)
+  checkbox.addEventListener('change', () => {
+    todo.completed = checkbox.checked
+    saveTodos(todos)
+  })
 
   // add element
   newLI.append(checkbox)

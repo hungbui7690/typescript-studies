@@ -1,6 +1,7 @@
 "use strict";
 /*
-  Connecting to LocalStorage P2
+  Todo List Finishing Touches
+  - we want to work with those checkboxes
 
 */
 const todos = readTodos();
@@ -9,8 +10,10 @@ const btn = document.querySelector('.btn');
 const input = document.getElementById('todo-input');
 const list = document.querySelector('ul');
 // (***)
-todos.forEach((todo) => {
-    createTodo(todo);
+window.addEventListener('DOMContentLoaded', () => {
+    todos.forEach((todo) => {
+        createTodo(todo);
+    });
 });
 function readTodos() {
     const todosJSON = localStorage.getItem('todos');
@@ -18,15 +21,18 @@ function readTodos() {
         return [];
     return JSON.parse(todosJSON);
 }
+// (***)
+function saveTodos(todos) {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
 function handleSubmit(e) {
     e.preventDefault();
     if (!input.value)
         return;
     const newTodo = { text: input.value, completed: false };
     createTodo(newTodo);
-    // (***) switch these 2 lines
     todos.push(newTodo);
-    localStorage.setItem('todos', JSON.stringify(todos));
+    saveTodos(todos);
 }
 form.addEventListener('submit', handleSubmit);
 function createTodo(todo) {
@@ -34,7 +40,13 @@ function createTodo(todo) {
     const newLI = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.checked = todo.completed; // (***)
     newLI.textContent = todo.text;
+    // (***)
+    checkbox.addEventListener('change', () => {
+        todo.completed = checkbox.checked;
+        saveTodos(todos);
+    });
     // add element
     newLI.append(checkbox);
     list === null || list === void 0 ? void 0 : list.append(newLI);
