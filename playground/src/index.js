@@ -1,6 +1,5 @@
 /*
-  JS - Extending Classes
-  -
+  JS - The Dreaded Super P1
 
 */
 
@@ -52,14 +51,12 @@ class Player {
   }
 }
 
-///////////////////////////////////
-
-// (***)
 class AdminPlayer extends Player {
   isAdmin = true
 }
 
-const admin = new AdminPlayer()
+// (***) param
+const admin = new AdminPlayer('super', 'admin')
 console.log(admin)
 
 admin.taunt()
