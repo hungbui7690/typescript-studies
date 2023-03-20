@@ -1,20 +1,21 @@
 /*
-  The readonly Modifier  
-  - in this case > id is number > primitive type 
-  - if the field is object > we still can change the value inside that object > ref type 
-  
+  Intersection Types P1
+  - combine types
 
 */
 
-type User = {
-  readonly id: number // (***) this field is read-only
-  username: string
+type Circle = {
+  radius: number
 }
 
-const user: User = {
-  id: 12845,
-  username: 'Bic',
+type Colorful = {
+  color: string
 }
 
-console.log(user.id) // still can read
-user.id = 123 // cannot change
+// intersection type > combination of Circle & Color
+type ColorfulCircle = Circle & Colorful
+
+const happyFace: ColorfulCircle = {
+  radius: 4,
+  color: 'red',
+}
