@@ -1,15 +1,13 @@
 "use strict";
 /*
-  TypeScripts NonNull Assertion Operator P2
-  - we have couple of solutions:
-    + Method 1: optional chaining > btn?.addEventListener()
+  TypeScripts NonNull Assertion Operator P3
     + Method 2: NonNull Assertion Operator
       > next lecture
   
-
 */
+// add ! at the end > tell TS that we guarantee this is not null > not recommended
 const btn = document.querySelector('.btn');
-// optional chaining
-btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', () => {
+// we can remove optional chaining
+btn.addEventListener('click', () => {
     alert('CLICK !!!');
 });
