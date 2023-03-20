@@ -1,17 +1,30 @@
 /*
-  Parameter Properties Shorthand P3
+  Getters and Setters
   
 */
 
 class Player {
   private numLives: number = 99
 
-  // (***) add private score
   constructor(
     public first: string,
     public last: string,
-    private score: number
+    private _score: number
   ) {}
+
+  // (***) similar to JS
+  get fullName(): string {
+    return `${this.first} ${this.last}`
+  }
+  get score(): number {
+    return this._score
+  }
+
+  // (***) setter
+  set score(newScore: number) {
+    if (newScore < 0) throw new Error('Score must be positive')
+    this._score = newScore
+  }
 
   private secretMethod(): void {
     console.log('secret!!')
@@ -19,4 +32,7 @@ class Player {
 }
 
 const elton = new Player('Elton', 'Steele', 100)
-console.log(elton)
+console.log(elton.fullName) // (***)
+
+elton.score = 199 // (***)
+console.log(elton.score)
