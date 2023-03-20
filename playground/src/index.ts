@@ -1,19 +1,22 @@
 /*
-  Parameter Properties Shorthand P2
+  Parameter Properties Shorthand P3
   
-
 */
 
 class Player {
-  private score: number = 0
+  private numLives: number = 99
 
-  // (***) only 1 line
-  constructor(public first: string, public last: string) {}
+  // (***) add private score
+  constructor(
+    public first: string,
+    public last: string,
+    private score: number
+  ) {}
 
   private secretMethod(): void {
     console.log('secret!!')
   }
 }
 
-const elton = new Player('Elton', 'Steele')
+const elton = new Player('Elton', 'Steele', 100)
 console.log(elton)

@@ -1,19 +1,19 @@
 "use strict";
 /*
-  Parameter Properties Shorthand P2
+  Parameter Properties Shorthand P3
   
-
 */
 class Player {
-    // (***) only 1 line
-    constructor(first, last) {
+    // (***) add private score
+    constructor(first, last, score) {
         this.first = first;
         this.last = last;
-        this.score = 0;
+        this.score = score;
+        this.numLives = 99;
     }
     secretMethod() {
         console.log('secret!!');
     }
 }
-const elton = new Player('Elton', 'Steele');
+const elton = new Player('Elton', 'Steele', 100);
 console.log(elton);
