@@ -1,12 +1,12 @@
 /*
-  Excess Properties P1
+  Excess Properties P2
+  - if we do like below, ts will only check if that object has those 2 properties or not 
 
 */
 
-// function that has 2 params: first & last
 function printName(person: { first: string; last: string }): void {
   console.log(`${person.first} ${person.last}`)
 }
 
-// err if we add 1 more property to the object
-printName({ first: 'Mick', last: 'Jagger', age: 18 })
+const singer = { first: 'Mick', last: 'Jagger', age: 18 } // create an object
+printName(singer) // no err now if we pass the object variable
