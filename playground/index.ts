@@ -1,24 +1,43 @@
 /*
-  Creating Type Aliases P2
-  - pic: type-alias
+  Nested Objects
+  - pic
   
+  > tsc index.ts
+  > node index.js
 */
 
-// (***) define
-type Point = {
-  x: number
-  y: number
+// assume we work on a project for Spotify
+type Song = {
+  title: string
+  artist: string
+  numStreams: number
+  credits: {
+    producer: string
+    writer: string
+  }
 }
 
-// use
-let coordinate: Point = { x: 32, y: 2 }
-
-// use
-function randomCoordinate(): Point {
-  return { x: Math.random(), y: Math.random() }
+function calculatePayout(song: Song): number {
+  return 0.0033 * song.numStreams
 }
 
-// use
-function doublePoint(point: Point): Point {
-  return { x: point.x * 2, y: point.y * 2 }
+function printSong(song: Song): void {
+  console.log(`${song.title} - ${song.artist}`)
 }
+
+//////////////////////////////////////
+
+const unchained = {
+  title: 'Unchained Melody',
+  artist: 'Brothers',
+  numStreams: 123885483,
+  credits: {
+    producer: 'Phil Jones',
+    writer: 'Phoenix ',
+  },
+}
+
+const earning = calculatePayout(unchained)
+console.log(earning)
+
+printSong(unchained)
