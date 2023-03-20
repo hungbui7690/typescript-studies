@@ -1,42 +1,27 @@
 /*
-  Extending Interfaces
-  - pic
-  - inherits from another interface > similar to class
+  Interface - Multiple Inheritance
   
 */
 
-interface Dog {
+interface Person {
   name: string
-  age: number
 }
 
-interface Dog {
-  breed: string
-  bark(): string
+interface Employee {
+  readonly id: number
+  email: string
 }
 
-const elton: Dog = {
-  name: 'Elton',
-  age: 4,
-  breed: 'Australian Shepherd',
-  bark() {
-    return `WOOF WOOF!`
-  },
+// here
+interface Engineer extends Person, Employee {
+  level: string
+  languages: string[]
 }
 
-/////////////////////////////////
-
-// (***)
-interface ServiceDog extends Dog {
-  job: 'Drug Sniffer' | 'Bomb' | 'Guide Dog'
-}
-
-const chewy: ServiceDog = {
-  name: 'Chewy',
-  age: 2.5,
-  breed: 'Lab',
-  bark() {
-    return `bark!`
-  },
-  job: 'Guide Dog',
+const pierre: Engineer = {
+  name: 'Pierre',
+  id: 5452,
+  email: 'pierre@gmail.com',
+  level: 'Senior',
+  languages: ['JS', 'Python'],
 }
