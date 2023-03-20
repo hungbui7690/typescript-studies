@@ -1,10 +1,10 @@
 /*
-  JS - Class Fields P2
+  JS - Private Fields P1
+  - check oop-javascript github (Mosh)
 
 */
 
 class Player {
-  // (***) write here
   score = 0
   numLives = 10
 
@@ -16,16 +16,12 @@ class Player {
   taunt() {
     console.log('Booya!!')
   }
-
-  // (***)
   loseLife() {
     this.numLives--
   }
 }
 
 const player = new Player('Bic', 'Babon')
-player.taunt()
-console.log(player)
 
-player.loseLife() // (***)
+player.score = -234234 // right now, anyone can do this
 console.log(player)
