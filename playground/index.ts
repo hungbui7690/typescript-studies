@@ -1,25 +1,26 @@
 /*
-  Interface Methods P2
+  Interface Method Parameters
   
 */
 
-interface Person {
-  readonly id: number
-  first: string
-  last: string
-  nickName?: string
+interface Product {
+  name: string
+  price: number
 
-  // alternative way
-  sayHi(): string
+  // parameter
+  applyDiscount(discount: number): number
 }
 
-const john: Person = {
-  id: 4542,
-  first: 'John',
-  last: 'Hardy',
-  nickName: 'J',
+const shoes: Product = {
+  name: 'Blue Suede Shoes',
+  price: 100,
 
-  sayHi: function () {
-    return `Hello!`
+  // use here
+  applyDiscount(amount: number): number {
+    const newPrice = this.price * (1 - amount)
+    this.price = newPrice
+    return this.price
   },
 }
+
+console.log(shoes.applyDiscount(0.4))
