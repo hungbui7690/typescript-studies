@@ -1,22 +1,14 @@
 /*
-  Parameter Properties Shorthand P1
+  Parameter Properties Shorthand P2
   
 
 */
 
 class Player {
-  // (1)
-  readonly first: string
-  readonly last: string
-
   private score: number = 0
 
-  // (2)
-  constructor(first: string, last: string) {
-    // (3) total 3 steps to setup constructor
-    this.first = first
-    this.last = last
-  }
+  // (***) only 1 line
+  constructor(public first: string, public last: string) {}
 
   private secretMethod(): void {
     console.log('secret!!')
@@ -24,3 +16,4 @@ class Player {
 }
 
 const elton = new Player('Elton', 'Steele')
+console.log(elton)
