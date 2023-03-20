@@ -1,14 +1,12 @@
 /*
-  Class Fields In TypeScript
-  - score & numLives in previous chapter
+  readonly Class Properties
 
 */
 
 class Player {
-  first: string
-  last: string
+  readonly first: string // (***)
+  readonly last: string
 
-  // (***)
   score: number = 0
   numLives: number = 10
 
@@ -19,7 +17,5 @@ class Player {
 }
 
 const elton = new Player('Elton', 'Steele')
-console.log(elton)
 
-// (***)
-elton.score = 1000
+elton.first = 'bic'

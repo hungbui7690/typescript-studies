@@ -1,12 +1,10 @@
 "use strict";
 /*
-  Class Fields In TypeScript
-  - score & numLives in previous chapter
+  readonly Class Properties
 
 */
 class Player {
     constructor(first, last) {
-        // (***)
         this.score = 0;
         this.numLives = 10;
         this.first = first;
@@ -14,6 +12,4 @@ class Player {
     }
 }
 const elton = new Player('Elton', 'Steele');
-console.log(elton);
-// (***)
-elton.score = 1000;
+elton.first = 'bic';
