@@ -1,20 +1,22 @@
 /*
-  Introducing Enums P2
+  A Bit More On Enums
   
 */
 
-// hover
+// now SHIPPED = 11, DELIVERED = 12, RETURNED = 13
 enum OrderStatus {
-  PENDING,
+  PENDING = 10, // (***)
   SHIPPED,
   DELIVERED,
   RETURNED,
 }
 
-const myStatus = OrderStatus.PENDING
-
-function isDelivered(status: OrderStatus) {
-  return status === OrderStatus.DELIVERED
+enum ArrowKeys {
+  UP = 'up',
+  DOWN = 'down',
+  LEFT = 'left',
+  RIGHT = 'right',
+  ERROR = 234, // can have multiple types of value
 }
 
-isDelivered(OrderStatus.RETURNED)
+let move = ArrowKeys.LEFT
