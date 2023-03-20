@@ -1,17 +1,16 @@
 /*
-  Delayed Initialization & Implicit Any P1
-  - this is the case we should use type annotation
+  Delayed Initialization & Implicit Any P2
 
 */
 
 const movies = ['Arrivals', 'The Thing', 'Aliens']
-let foundMovie // declare but not initialize > right now, type === any
+let foundMovie: string // set type to string
 
 for (let movie of movies) {
   if (movie === 'Amadeus') {
-    foundMovie = 'Amadeus' // (***)
+    foundMovie = 'Amadeus'
   }
 }
 
-foundMovie() // we can do all of these
+foundMovie() // complain if we don't anything crazy or nonsense
 foundMovie = 1
