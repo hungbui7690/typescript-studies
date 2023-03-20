@@ -1,8 +1,5 @@
 /*
-  Type Assertions P1
-  - pic
-  - we tell TS that we know this one better than you 
-
+  Type Assertions P2
 
 */
 
@@ -14,6 +11,7 @@ btn.addEventListener('click', () => {
 
 //////////////////////////////////////////
 
+// we assume that TS does not know anything about this variable at runtime > unknown
 let mystery: unknown = 'Hello World !!'
 
-const len = mystery.length // complain
+const len = (mystery as string).length // (***) type assertion === as > we tell TS that we clearly know that this is string
