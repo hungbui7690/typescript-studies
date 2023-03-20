@@ -1,17 +1,10 @@
 /*
-  Function Parameter Annotations P2
-  - pic
+  More On Function Parameter Annotations
 
 */
 
-// add type to parameter > hover > now, we cannot do nonsense stuff anymore
-function square(num: number) {
-  return num * num
-}
-square(3)
-square(true) // we cannot do this anymore
+// define 3 params
+const doSomething = (person: string, age: number, isFunny: boolean) => {}
 
-// another example
-function greet(person: string) {
-  return `Hi there, ${person}!`
-}
+// need to have exact number of parameters > otherwise, complain
+doSomething('Chicken Face', 76, false)
