@@ -1,15 +1,17 @@
 /*
-  Function Parameter Annotations P1
+  Function Parameter Annotations P2
   - pic
 
 */
 
-function square(num) {
-  num.toUpperCase() // invalid
-  num() // invalid
+// add type to parameter > hover > now, we cannot do nonsense stuff anymore
+function square(num: number) {
   return num * num
 }
-
 square(3)
-square(true) // invalid
-square('hello') // invalid
+square(true) // we cannot do this anymore
+
+// another example
+function greet(person: string) {
+  return `Hi there, ${person}!`
+}
