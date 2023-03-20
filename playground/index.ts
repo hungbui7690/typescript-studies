@@ -1,12 +1,9 @@
 /*
-  Type Narrowing w Union Types P1
-  - 
-
+  Type Narrowing w Union Types P2
+  
 */
 
-function printAge(age: number | string) {
-  console.log(`You are ${age} years old`)
+// 45.60 or $45.60
+function calcTax(price: number | string, tax: number) {
+  return price * tax // because price can be string > ts complains
 }
-
-printAge(23)
-printAge('27')
