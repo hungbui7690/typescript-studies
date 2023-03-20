@@ -1,14 +1,20 @@
 /*
-  Optional Properties
-  > ?: 
+  The readonly Modifier  
+  - in this case > id is number > primitive type 
+  - if the field is object > we still can change the value inside that object > ref type 
   
+
 */
 
-type Point = {
-  x: number
-  y: number
-  z?: number // (***) z is optional
+type User = {
+  readonly id: number // (***) this field is read-only
+  username: string
 }
 
-const myPointX: Point = { x: 1, y: 2, z: 3 }
-const myPointY: Point = { x: 1, y: 2 } // doesn't need to have z
+const user: User = {
+  id: 12845,
+  username: 'Bic',
+}
+
+console.log(user.id) // still can read
+user.id = 123 // cannot change
