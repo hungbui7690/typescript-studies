@@ -1,10 +1,12 @@
 /*
-  More On Function Parameter Annotations
+  Working With Default Parameters
 
 */
 
-// define 3 params
-const doSomething = (person: string, age: number, isFunny: boolean) => {}
+// default parameter
+function greet(person: string = 'stranger') {
+  return `Hi there, ${person}`
+}
 
-// need to have exact number of parameters > otherwise, complain
-doSomething('Chicken Face', 76, false)
+greet()
+greet('Joe')
