@@ -1,13 +1,23 @@
 /*
-  Introducing Tuples
-  - pic
-  - fixed length, fixed order (first item must be string, 2nd item must be boolean...)
-
+  A Bit More On Tuples
+  - we should use object for this example 
 */
 
-// array of multiple type
-const stuff: (string | number)[] = [1, 'joe', 'nick', 4]
+type HTTPResponse = [number, string]
 
-// if we want to have an array that represent RBG color > must have exact 3 items in the array > tuple
-let color: [number, number, number] = [0, 233, 255]
-color = [0, 0, 255, 0] // 4 elements > complain
+let res: HTTPResponse = [200, 'OK']
+res = [404, 'NOT FOUND']
+// res[0] = "OK" // complain
+
+res.push(123) // (***) but the problem appears when we have the correct shape, then we push in > no complain
+res.pop()
+res.pop()
+res.pop()
+res.pop()
+res.pop()
+res.pop() // we also can pop() many times > this is the limitation of tuples
+
+const responses: HTTPResponse[] = [
+  [404, 'NOT FOUND'],
+  [200, 'OK'],
+]
