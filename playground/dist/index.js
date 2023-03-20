@@ -1,26 +1,30 @@
 "use strict";
 /*
-  Adding in an Interface
-  - right now, we don't have any list or collection to store the data of todos
+  Connecting to LocalStorage P1
 
 */
-const todos = []; // (2)
+const todos = readTodos(); // (3)
 const form = document.querySelector('form');
 const btn = document.querySelector('.btn');
 const input = document.getElementById('todo-input');
 const list = document.querySelector('ul');
+// (2)
+function readTodos() {
+    const todosJSON = localStorage.getItem('todos');
+    if (!todosJSON)
+        return [];
+    return JSON.parse(todosJSON);
+}
 function handleSubmit(e) {
     e.preventDefault();
     if (!input.value)
         return;
-    // (4a)
     const newTodo = { text: input.value, completed: false };
-    // (4b) we can check for todos in the console of browser
     createTodo(newTodo);
+    localStorage.setItem('todos', JSON.stringify(todos)); // (1)
     todos.push(newTodo);
 }
 form.addEventListener('submit', handleSubmit);
-// (3)
 function createTodo(todo) {
     // create element
     const newLI = document.createElement('li');

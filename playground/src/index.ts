@@ -1,38 +1,40 @@
 /*
-  Adding in an Interface
-  - right now, we don't have any list or collection to store the data of todos 
+  Connecting to LocalStorage P1
 
 */
 
-// (1)
 interface Todo {
   text: string
   completed: boolean
 }
 
-const todos: Todo[] = [] // (2)
+const todos: Todo[] = readTodos() // (3)
 
 const form = document.querySelector('form')!
 const btn = document.querySelector('.btn')! as HTMLButtonElement
 const input = document.getElementById('todo-input')! as HTMLInputElement
 const list = document.querySelector('ul')
 
+// (2)
+function readTodos(): Todo[] {
+  const todosJSON = localStorage.getItem('todos')
+  if (!todosJSON) return []
+  return JSON.parse(todosJSON)
+}
+
 function handleSubmit(e: SubmitEvent) {
   e.preventDefault()
 
   if (!input.value) return
-
-  // (4a)
   const newTodo = { text: input.value, completed: false }
 
-  // (4b) we can check for todos in the console of browser
   createTodo(newTodo)
+  localStorage.setItem('todos', JSON.stringify(todos)) // (1)
   todos.push(newTodo)
 }
 
 form.addEventListener('submit', handleSubmit)
 
-// (3)
 function createTodo(todo: Todo) {
   // create element
   const newLI = document.createElement('li')
