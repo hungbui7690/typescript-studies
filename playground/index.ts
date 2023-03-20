@@ -1,9 +1,15 @@
 /*
-  More Array Syntax P1
-  - this syntax is used for other things beside arrays, though it can be used with array
+  More Array Syntax P2
 
 */
 
-const boolListX: Array<boolean> = []
+type Point = {
+  x: number
+  y: number
+  z?: number
+}
 
-const boolListY: boolean[] = []
+const coords: Point[] = []
+coords.push({ x: 2, y: 3 })
+coords.push({ x: 99, y: 0 })
+coords.push({ x: 99, y: 99, z: 123 })
