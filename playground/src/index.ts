@@ -1,13 +1,15 @@
 /*
-  readonly Class Properties
+  The public Modifier
+  - public/private > only exists in TS
+  - default is public
 
 */
 
 class Player {
-  readonly first: string // (***)
-  readonly last: string
+  public readonly first: string
+  public readonly last: string
 
-  score: number = 0
+  public score: number = 0 // add public to make it more clear
   numLives: number = 10
 
   constructor(first: string, last: string) {
@@ -18,4 +20,4 @@ class Player {
 
 const elton = new Player('Elton', 'Steele')
 
-elton.first = 'bic'
+console.log(elton.first) // though readonly, we still can access > just cannot change
