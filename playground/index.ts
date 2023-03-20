@@ -1,21 +1,25 @@
 /*
-  Intersection Types P1
+  Intersection Types P2
   - combine types
 
 */
 
-type Circle = {
-  radius: number
+type Cat = {
+  numLives: number
 }
 
-type Colorful = {
-  color: string
+type Dog = {
+  breed: string
 }
 
-// intersection type > combination of Circle & Color
-type ColorfulCircle = Circle & Colorful
+// combine + add on
+type CatDog = Cat &
+  Dog & {
+    age: number
+  }
 
-const happyFace: ColorfulCircle = {
-  radius: 4,
-  color: 'red',
+const bic = {
+  numLives: 9,
+  breed: 'short-hair',
+  age: 4,
 }
