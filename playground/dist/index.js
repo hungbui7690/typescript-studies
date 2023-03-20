@@ -1,14 +1,17 @@
 "use strict";
 /*
-  Connecting to LocalStorage P1
+  Connecting to LocalStorage P2
 
 */
-const todos = readTodos(); // (3)
+const todos = readTodos();
 const form = document.querySelector('form');
 const btn = document.querySelector('.btn');
 const input = document.getElementById('todo-input');
 const list = document.querySelector('ul');
-// (2)
+// (***)
+todos.forEach((todo) => {
+    createTodo(todo);
+});
 function readTodos() {
     const todosJSON = localStorage.getItem('todos');
     if (!todosJSON)
@@ -21,8 +24,9 @@ function handleSubmit(e) {
         return;
     const newTodo = { text: input.value, completed: false };
     createTodo(newTodo);
-    localStorage.setItem('todos', JSON.stringify(todos)); // (1)
+    // (***) switch these 2 lines
     todos.push(newTodo);
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 form.addEventListener('submit', handleSubmit);
 function createTodo(todo) {

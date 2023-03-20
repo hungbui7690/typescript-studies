@@ -1,5 +1,5 @@
 /*
-  Connecting to LocalStorage P1
+  Connecting to LocalStorage P2
 
 */
 
@@ -8,14 +8,18 @@ interface Todo {
   completed: boolean
 }
 
-const todos: Todo[] = readTodos() // (3)
+const todos: Todo[] = readTodos()
 
 const form = document.querySelector('form')!
 const btn = document.querySelector('.btn')! as HTMLButtonElement
 const input = document.getElementById('todo-input')! as HTMLInputElement
 const list = document.querySelector('ul')
 
-// (2)
+// (***)
+todos.forEach((todo) => {
+  createTodo(todo)
+})
+
 function readTodos(): Todo[] {
   const todosJSON = localStorage.getItem('todos')
   if (!todosJSON) return []
@@ -29,8 +33,10 @@ function handleSubmit(e: SubmitEvent) {
   const newTodo = { text: input.value, completed: false }
 
   createTodo(newTodo)
-  localStorage.setItem('todos', JSON.stringify(todos)) // (1)
+
+  // (***) switch these 2 lines
   todos.push(newTodo)
+  localStorage.setItem('todos', JSON.stringify(todos))
 }
 
 form.addEventListener('submit', handleSubmit)
