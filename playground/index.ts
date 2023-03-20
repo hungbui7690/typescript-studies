@@ -1,23 +1,16 @@
 /*
-  Compiling TypeScript
-  - tsc filename.extension
-    > compile to javascript version
-    > right now, it will 
-
-//////////////////////////////////////
-
-  Type Inference
+  The Any Type
   - pic
-  
-  (***) ts can infer the type of a variable bases upon what value we assign to it 
+  - does not appear in JS > does not do type checking > we try to avoid it as much as possible 
 
 */
 
-// though we don't assign the type > when we hover on the variable, it still shows the type
-let tvShow = 'Olive Bun'
-tvShow = 'White Collar'
-tvShow = false
+// if we set the type to "any" > we can change it to any type
+let thing: any = 'hello'
+thing = 1
+thing = false
+thing()
+thing.toUpperCase() // we can call any methods, and ts does not complain about it
 
-let isFunny = false
-isFunny = true
-isFunny = 1
+const animal = 'dog'
+animal() // complain now
