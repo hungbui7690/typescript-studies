@@ -1,14 +1,19 @@
 /*
-  TypeScripts NonNull Assertion Operator P3
-    + Method 2: NonNull Assertion Operator
-      > next lecture
-  
+  Type Assertions P1
+  - pic
+  - we tell TS that we know this one better than you 
+
+
 */
 
-// add ! at the end > tell TS that we guarantee this is not null > not recommended
 const btn = document.querySelector('.btn')!
 
-// we can remove optional chaining
 btn.addEventListener('click', () => {
   alert('CLICK !!!')
 })
+
+//////////////////////////////////////////
+
+let mystery: unknown = 'Hello World !!'
+
+const len = mystery.length // complain
