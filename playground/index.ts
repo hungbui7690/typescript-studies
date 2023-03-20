@@ -1,12 +1,20 @@
 /*
-  Introducing Enums P1
-  - pic
-  - use when we work with sets of value many times 
-
-  > UP/DOWN/LEFT/RIGHT > gaming
-  > PENDING/SHIPPED/DELIVERED
+  Introducing Enums P2
+  
 */
 
-const PENDING = 0
-const SHIPPED = 1
-const DELIVERED = 2
+// hover
+enum OrderStatus {
+  PENDING,
+  SHIPPED,
+  DELIVERED,
+  RETURNED,
+}
+
+const myStatus = OrderStatus.PENDING
+
+function isDelivered(status: OrderStatus) {
+  return status === OrderStatus.DELIVERED
+}
+
+isDelivered(OrderStatus.RETURNED)
