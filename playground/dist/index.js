@@ -1,19 +1,19 @@
 "use strict";
 /*
-  The private Modifier
-  - #score > for ES2015
+  Parameter Properties Shorthand P1
+  
 
 */
 class Player {
+    // (2)
     constructor(first, last) {
-        this.score = 0; // (***)
+        this.score = 0;
+        // (3) total 3 steps to setup constructor
         this.first = first;
         this.last = last;
     }
-    // private method
     secretMethod() {
         console.log('secret!!');
     }
 }
 const elton = new Player('Elton', 'Steele');
-elton.secretMethod(); // though TS is yelling, we still can see it works in the browser
