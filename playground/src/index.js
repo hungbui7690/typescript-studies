@@ -1,5 +1,5 @@
 /*
-  JS - The Dreaded Super P2
+  JS - The Dreaded Super P3
 
 */
 
@@ -51,16 +51,18 @@ class Player {
   }
 }
 
-// we need to call super() when we need to add more params to constructor() of child class
 class AdminPlayer extends Player {
-  constructor(powers) {
-    super() // right now, first = last = undefined
+  // (***)
+  constructor(first, last, powers) {
+    super(first, last) // (***)
     this.powers = powers
   }
+
+  isAdmin = true
 }
 
 // (***)
-const admin = new AdminPlayer(['delete', 'restore world'])
+const admin = new AdminPlayer('super', 'admin', ['delete', 'restore world'])
 console.log(admin)
 
 admin.taunt()
