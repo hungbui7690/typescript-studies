@@ -1,13 +1,23 @@
 /*
-  Working With Numbers & Booleans
-  - pic: number-boolean
+  Compiling TypeScript
+  - tsc filename.extension
+    > compile to javascript version
+    > right now, it will 
+
+//////////////////////////////////////
+
+  Type Inference
+  - pic
+  
+  (***) ts can infer the type of a variable bases upon what value we assign to it 
 
 */
 
-let numCatLives: number = 9
-numCatLives++
-numCatLives = 'zero' // complain
+// though we don't assign the type > when we hover on the variable, it still shows the type
+let tvShow = 'Olive Bun'
+tvShow = 'White Collar'
+tvShow = false
 
-let gameOver: boolean = false
-gameOver = true
-gameOver = 'true' // complain
+let isFunny = false
+isFunny = true
+isFunny = 1

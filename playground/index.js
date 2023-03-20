@@ -1,20 +1,13 @@
 /*
-  What / Why
-  > pic
-
-  Installation
-  > npm install typescript --save-dev
-  > npm install -g typescript
-    > either one is ok > after this, we can use "tsc" command
-
-  Playground
-  > pic
-
-  Running Typescript File
-  > tsc index.ts
-    > will create index.js file > compile ts code into js
-
-
+  Compiling TypeScript
+  - tsc filename.extension
+    > compile to javascript version
+    > right now, it will
 
 */
-console.log('Hello World');
+var numCatLives = 9;
+numCatLives++;
+numCatLives = 'zero'; // complain
+var gameOver = false;
+gameOver = true;
+gameOver = 'true'; // complain
