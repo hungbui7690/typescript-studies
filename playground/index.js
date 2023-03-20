@@ -1,13 +1,19 @@
 /*
-  Compiling to JavaScript
-  - pic
-  - there are too many settings > check ts playground
+  Watch Mode
+  > tsc index.js --watch
+  > tsc index.js -w
+  
+////////////////////////////////////
 
-  > tsc --init
-    > create tsconfig.json with many settings inside
+  Working With Multiple Files
+  - create farmstand.ts
+  - if we want to compile 2 files at the same time:
+    > tsc
+
 */
 var norma = {
     breed: 'Silk',
     eggsPerWeek: 4,
-    name: 'Norma'
+    name: 'Norma',
+    age: 2
 };
