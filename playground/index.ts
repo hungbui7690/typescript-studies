@@ -1,8 +1,7 @@
 /*
-  Reopening Interfaces
+  Extending Interfaces
   - pic
-  - after create interface, we can add more properties to that interface 
-  - with type alias, we cannot do that
+  - inherits from another interface > similar to class
   
 */
 
@@ -23,4 +22,21 @@ const elton: Dog = {
   bark() {
     return `WOOF WOOF!`
   },
+}
+
+/////////////////////////////////
+
+// (***)
+interface ServiceDog extends Dog {
+  job: 'Drug Sniffer' | 'Bomb' | 'Guide Dog'
+}
+
+const chewy: ServiceDog = {
+  name: 'Chewy',
+  age: 2.5,
+  breed: 'Lab',
+  bark() {
+    return `bark!`
+  },
+  job: 'Guide Dog',
 }
