@@ -1,14 +1,13 @@
 /*
-  Watch Mode
-  > tsc index.js --watch
-  > tsc index.js -w
-  
-////////////////////////////////////
+  The Files Compiler Option
+  - pic
+  - we want to just compile specific files > use files options
+  - create dontTouch.ts
+    > when we run "tsc" > compile all files 
 
-  Working With Multiple Files
-  - create farmstand.ts
-  - if we want to compile 2 files at the same time: 
-    > tsc
+  - Config
+      "files": ["farmstand.ts", "index.ts"]
+  - Run tsc > now just compile these 2 files 
 
 */
 
