@@ -1,7 +1,6 @@
 /*
-  The public Modifier
-  - public/private > only exists in TS
-  - default is public
+  The private Modifier
+  - #score > for ES2015
 
 */
 
@@ -9,15 +8,18 @@ class Player {
   public readonly first: string
   public readonly last: string
 
-  public score: number = 0 // add public to make it more clear
-  numLives: number = 10
+  private score: number = 0 // (***)
 
   constructor(first: string, last: string) {
     this.first = first
     this.last = last
   }
+
+  // private method
+  private secretMethod(): void {
+    console.log('secret!!')
+  }
 }
 
 const elton = new Player('Elton', 'Steele')
-
-console.log(elton.first) // though readonly, we still can access > just cannot change
+elton.secretMethod() // though TS is yelling, we still can see it works in the browser
