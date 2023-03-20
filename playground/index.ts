@@ -1,25 +1,18 @@
 /*
-  Introducing Interfaces
-  - pic
-  - describe the shape of objects 
-
+  Readonly and Optional Interface Properties
+  
 */
 
-// type alias
-type Point = {
-  x: number
-  y: number
+interface Person {
+  readonly id: number // readonly
+  first: string
+  last: string
+  nickName?: string // optional
 }
 
-const pt: Point = { x: 1, y: 10 }
-
-//////////////////////////////
-
-// interface > no = sign
-interface IPoint {
-  x: number
-  y: number
+const john: Person = {
+  id: 4542,
+  first: 'John',
+  last: 'Hardy',
+  nickName: 'J',
 }
-
-// right now, it is similar to "type alias", but we will learn about the different later
-const ptX: IPoint = { x: 1, y: 213 }
