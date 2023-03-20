@@ -1,8 +1,24 @@
 /*
-  Object Types EXERCISE
+  Object Types SOLUTION
 
 */
 
+////////////////////////////////////
+// Solution 1
+////////////////////////////////////
+type Movie = {
+  readonly title: string
+  originalTitle?: string
+  director: string
+  releaseYear: number
+  boxOffice: {
+    budget: number
+    grossUS: number
+    grossWorldwide: number
+  }
+}
+
+////////////////////////////////////
 // Write the Movie type alias to make the following two variables properly typed
 // Make sure that "originalTitle" is optional and "title" is readonly
 const dune: Movie = {
@@ -28,8 +44,20 @@ const cats: Movie = {
   },
 }
 
+////////////////////////////////////
+// Solution 2
+////////////////////////////////////
+
 // Write a function called getProfit that accepts a single Movie object
 // It should return the movie's worldwide gross minus its budget
 
 // For example...
 // getProfit(cats) => -21166652
+
+const getProfit = (movie: Movie): number => {
+  const { grossWorldwide, budget } = movie.boxOffice
+  return grossWorldwide - budget
+}
+
+const profit = getProfit(cats)
+console.log(profit)
