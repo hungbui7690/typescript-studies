@@ -1,16 +1,17 @@
 /*
-  The Any Type
-  - pic
-  - does not appear in JS > does not do type checking > we try to avoid it as much as possible 
+  Delayed Initialization & Implicit Any P1
+  - this is the case we should use type annotation
 
 */
 
-// if we set the type to "any" > we can change it to any type
-let thing: any = 'hello'
-thing = 1
-thing = false
-thing()
-thing.toUpperCase() // we can call any methods, and ts does not complain about it
+const movies = ['Arrivals', 'The Thing', 'Aliens']
+let foundMovie // declare but not initialize > right now, type === any
 
-const animal = 'dog'
-animal() // complain now
+for (let movie of movies) {
+  if (movie === 'Amadeus') {
+    foundMovie = 'Amadeus' // (***)
+  }
+}
+
+foundMovie() // we can do all of these
+foundMovie = 1
