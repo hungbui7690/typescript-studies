@@ -1,11 +1,12 @@
 /*
-  JS - Private Fields P1
-  - check oop-javascript github (Mosh)
+  JS - Private Fields P2
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
 
+  
 */
 
 class Player {
-  score = 0
+  #score = 0 // private field
   numLives = 10
 
   constructor(first, last) {
@@ -23,5 +24,5 @@ class Player {
 
 const player = new Player('Bic', 'Babon')
 
-player.score = -234234 // right now, anyone can do this
+player.#score = -234234 // we cannot access this field anymore
 console.log(player)
