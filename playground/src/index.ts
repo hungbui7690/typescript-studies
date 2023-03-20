@@ -1,6 +1,7 @@
 /*
-  Strict Option P2
-  - "strictNullChecks": false > allow null & undefined
+  Strict Option P3
+  - if we want to have something to be null > add to type
+  - "strictNullChecks": true 
     > code below
 
 */
@@ -21,8 +22,6 @@ const norma: Chicken = {
 
 /////////////////////////
 
-let users: string[] = ['joe', 'dan']
-
-// (***)
+// add null here
+let users: string[] | null = ['joe', 'dan']
 users = null
-users = undefined
