@@ -1,8 +1,27 @@
 /*
-  Literal Types P1
-  - pic
-
+  Literal Types P2
+  - we can combine literal type with union type 
+  
 */
 
-const zero: 0 = 0 // can hold zero only
-zero = 2
+let mood: 'Happy' | 'Sad' = 'Happy'
+mood = 'Sad'
+
+///////////////////////////////////
+
+type DayOfWeek =
+  | 'Monday'
+  | 'Tuesday'
+  | 'Wednesday'
+  | 'Thursday'
+  | 'Friday'
+  | 'Saturday'
+
+let today: DayOfWeek = 'Monday'
+
+////////////////////////////////////
+
+type Option = 'Yes' | 'No'
+
+let answer: Option = 'Yes'
+answer = 'No'
