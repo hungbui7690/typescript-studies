@@ -1,14 +1,15 @@
 /*
-  Type Assertions With the DOM P2
-  - alternative way to declare type assertion > this way is hard to read 
+  Working With Events P1
+  - index.html > add form
 
 */
 
+const form = document.querySelector('form')! // (1) when we use element selector > TS knows right away this is a form > hover
 const btn = document.querySelector('.btn')! as HTMLButtonElement
+const input = document.getElementById('todo-input')! as HTMLInputElement
 
-// remove type assertion
-const input = document.getElementById('todo-input')!
-
-btn.addEventListener('click', () => {
-  alert((<HTMLInputElement>input).value) // use here > need to be in parenthesis
+// (2)
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  console.log('SUBMIT !!!')
 })
