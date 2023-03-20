@@ -1,16 +1,15 @@
 /*
-  Delayed Initialization & Implicit Any P2
+  Function Parameter Annotations P1
+  - pic
 
 */
 
-const movies = ['Arrivals', 'The Thing', 'Aliens']
-let foundMovie: string // set type to string
-
-for (let movie of movies) {
-  if (movie === 'Amadeus') {
-    foundMovie = 'Amadeus'
-  }
+function square(num) {
+  num.toUpperCase() // invalid
+  num() // invalid
+  return num * num
 }
 
-foundMovie() // complain if we don't anything crazy or nonsense
-foundMovie = 1
+square(3)
+square(true) // invalid
+square('hello') // invalid
