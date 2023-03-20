@@ -1,9 +1,13 @@
 /*
-  JS - Setters
+  JS - Static Properties & Methods
+  - use for helper methods, utils...
 
 */
 
 class Player {
+  // (***) exists on the class itself > not exist on instance, but on class
+  static description = 'Player in our game'
+
   #score = 9
   numLives = 10
 
@@ -13,14 +17,16 @@ class Player {
     this.#secret()
   }
 
+  static randomPlayer() {
+    return new Player('Andy', 'Samberg')
+  }
+
   get fullName() {
     return `${this.first} ${this.last}`
   }
   get score() {
     return this.#score
   }
-
-  // (***) setters
   set score(newScore) {
     if (newScore < 0) throw new Error('Score must be positive!')
     this.#score = newScore
@@ -50,11 +56,9 @@ class Player {
 }
 
 const player = new Player('Bic', 'Babon')
-
-player.score = 34635 // (***)
-console.log(player.score)
-
-player.fullName = 'Amy Adams' // (***)
-console.log(player.fullName)
-
 console.log(player)
+
+console.log(Player.description) // (***)
+
+const andy = Player.randomPlayer() // (***) call static method
+console.log(andy)
