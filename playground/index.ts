@@ -1,17 +1,15 @@
 /*
-  Working With Object Types
+  More Object Types
 
 */
 
-const dog = {
-  name: 'Elton',
-  breed: 'Australian Shepherd',
-  age: 0.5,
+// setup pattern for object
+let coordinate: { x: number; y: number } = {
+  x: 34,
+  y: 2,
 }
 
-// function accepts object as parameter
-function printName(person: { first: string; last: string }): void {
-  console.log(`${person.first} ${person.last}`)
+// function that returns object
+function randomCoordinate(): { x: number; y: number } {
+  return { x: 1, y: 2 }
 }
-
-printName({ first: 'Thomas', last: 'Jenkins' })
