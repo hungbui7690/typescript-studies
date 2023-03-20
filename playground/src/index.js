@@ -1,5 +1,5 @@
 /*
-  JS - Getters
+  JS - Setters
 
 */
 
@@ -13,12 +13,23 @@ class Player {
     this.#secret()
   }
 
-  // (***) need to have get keyword
   get fullName() {
     return `${this.first} ${this.last}`
   }
   get score() {
     return this.#score
+  }
+
+  // (***) setters
+  set score(newScore) {
+    if (newScore < 0) throw new Error('Score must be positive!')
+    this.#score = newScore
+  }
+  set fullName(newName) {
+    const [first, last] = newName.split(' ')
+
+    this.first = first
+    this.last = last
   }
 
   getScore() {
@@ -39,7 +50,11 @@ class Player {
 }
 
 const player = new Player('Bic', 'Babon')
-console.log(player)
 
-console.log(player.fullName) // (***)
+player.score = 34635 // (***)
 console.log(player.score)
+
+player.fullName = 'Amy Adams' // (***)
+console.log(player.fullName)
+
+console.log(player)
