@@ -1,13 +1,17 @@
 /*
-  JS - Constructors P2
+  JS - Class Fields P1
+  - nowadays, we don't use this way > next lecture
 
 */
 
 class Player {
-  // add property
   constructor(first, last) {
     this.first = first
     this.last = last
+
+    // (***) traditional way
+    this.score = 0
+    this.numLives = 10
   }
 
   taunt() {
@@ -15,10 +19,7 @@ class Player {
   }
 }
 
-// use here
 const player = new Player('Bic', 'Babon')
 player.taunt()
-
-// log
 console.log(player.first)
 console.log(player.last)
