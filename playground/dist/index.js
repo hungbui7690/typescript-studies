@@ -1,13 +1,19 @@
 "use strict";
 /*
-  Type Assertions P2
+  Type Assertions With the DOM P1
+  - similar, since we know better than TS in this case > we could use type assertion
+  - index.html > add input
+
+  (***)
+  - ! : we tell JS this is not null
+  - as HTMLInputElement: type assertion
+  > both of them have different responsibilities
 
 */
 const btn = document.querySelector('.btn');
+// console.dir() > we see that this is HTMLInputElement > but TS just know this is HTMLElement > no .value property
+// we use type assertion
+const input = document.getElementById('todo-input');
 btn.addEventListener('click', () => {
-    alert('CLICK !!!');
+    alert(input.value); // now we can use input.value with no complain
 });
-//////////////////////////////////////////
-// we assume that TS does not know anything about this variable at runtime > unknown
-let mystery = 'Hello World !!';
-const len = mystery.length; // (***) type assertion === as > we tell TS that we clearly know that this is string
