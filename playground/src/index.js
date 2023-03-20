@@ -1,13 +1,11 @@
 /*
-  JS - Static Properties & Methods
-  - use for helper methods, utils...
+  JS - Extending Classes
+  -
 
 */
 
 class Player {
-  // (***) exists on the class itself > not exist on instance, but on class
   static description = 'Player in our game'
-
   #score = 9
   numLives = 10
 
@@ -20,7 +18,6 @@ class Player {
   static randomPlayer() {
     return new Player('Andy', 'Samberg')
   }
-
   get fullName() {
     return `${this.first} ${this.last}`
   }
@@ -55,10 +52,14 @@ class Player {
   }
 }
 
-const player = new Player('Bic', 'Babon')
-console.log(player)
+///////////////////////////////////
 
-console.log(Player.description) // (***)
+// (***)
+class AdminPlayer extends Player {
+  isAdmin = true
+}
 
-const andy = Player.randomPlayer() // (***) call static method
-console.log(andy)
+const admin = new AdminPlayer()
+console.log(admin)
+
+admin.taunt()
