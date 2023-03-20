@@ -1,13 +1,26 @@
 /*
-  Union Types and Arrays P1
-  - we want array to hold multiple type 
+  Union Types and Arrays P2
 
 */
 
-const stuff: any[] = [1, 2, 'jun', false] // we want to avoid any as much as possible
+type Point = {
+  x: number
+  y: number
+}
 
-// the correct way > hold number and string at the same time
-const thing: (number | string)[] = [1, 2, 3, 'jc']
+type Loc = {
+  lat: number
+  lng: number
+}
 
-// with this definition, array can be either all numbers or strings
-const x: number[] | string[] = [1, 2, 'jc']
+let coords: (Point | Loc)[] = []
+
+coords.push({
+  x: 1,
+  y: 2,
+})
+
+coords.push({
+  lat: 435.32,
+  lng: 123.43,
+})
