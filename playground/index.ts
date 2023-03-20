@@ -1,13 +1,10 @@
 /*
-  Anonymous Function Contextual Typing
-  - pic: function-anonymous-function
+  The Void Type
+  - pic: function-void-type
+  - functions don't return anything
 
 */
 
-const colors = ['red', 'orange', 'yellow']
-
-// ts infers and knows right away that "color" === string
-colors.map((color) => {
-  color.toUpperCase()
-  color.toFixed()
-})
+function printTwice(msg: string): void {
+  console.log(msg)
+}
