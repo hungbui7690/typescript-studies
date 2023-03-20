@@ -1,13 +1,16 @@
 /*
-  Readonly and Optional Interface Properties
+  Interface Methods P1
   
 */
 
 interface Person {
-  readonly id: number // readonly
+  readonly id: number
   first: string
   last: string
-  nickName?: string // optional
+  nickName?: string
+
+  // sayHi is a method, and must return string
+  sayHi: () => string
 }
 
 const john: Person = {
@@ -15,4 +18,9 @@ const john: Person = {
   first: 'John',
   last: 'Hardy',
   nickName: 'J',
+
+  // use here
+  sayHi: function () {
+    return `Hello!`
+  },
 }
