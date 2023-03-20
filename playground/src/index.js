@@ -1,17 +1,24 @@
 /*
-  JS - Private Fields P2
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+  JS - Private Fields P3
 
-  
 */
 
 class Player {
-  #score = 0 // private field
+  #score = 0
   numLives = 10
 
   constructor(first, last) {
     this.first = first
     this.last = last
+    this.#secret() // call private method
+  }
+
+  // (***)
+  getScore() {
+    return this.#score
+  }
+  setScore(newScore) {
+    this.#score = newScore
   }
 
   taunt() {
@@ -20,9 +27,17 @@ class Player {
   loseLife() {
     this.numLives--
   }
+
+  // private method
+  #secret() {
+    console.log('SECRET')
+  }
 }
 
 const player = new Player('Bic', 'Babon')
-
-player.#score = -234234 // we cannot access this field anymore
 console.log(player)
+
+// (***)
+console.log(player.getScore())
+player.setScore(20)
+console.log(player.getScore())
