@@ -1,23 +1,28 @@
 /*
-  The Never Type
-  - pic: functions-never-type
-  - function should never return 
-    + function may throw exception > no return 
-    + function can continuously runs in some sort of loops > never finishes 
-    > both functions above never have a chance to return anything 
-
-  (***) compare to void > void is technically a value > void in TS actually return "undefined" 
+  Function Types EXERCISE
 
 */
 
-// case 1
-function makeError(msg: string): never {
-  throw new Error(msg)
-}
+// **********************************************
+// ******************* PART 1 *******************
+// **********************************************
+// Write a function called "twoFer" that accepts a person's name
+// It should return a string in the format "one for <name>, one for me"
+// If no name is provided, it should default to "you"
 
-// case 2
-function gameLoop(): never {
-  while (true) {
-    console.log('Game Loop is running...')
-  }
-}
+// twoFer() => "One for you, one for me"
+// twoFer("Elton") => "One for Elton, one for me"
+
+// **********************************************
+// ******************* PART 2 *******************
+// **********************************************
+// Write a isLeapyear() function that accepts a year and returns true/false depending on if the year is a leap year
+// isLeapYear(2012) => true
+// isLeapYear(2013) => false
+
+// To determine whether a year is a leapyear, use this "formula":
+// A YEAR IS A LEAPYEAR IF
+// - year is a multiple of 4 AND not a multiple of 100
+// OR...
+// - year is a multiple of 400
+// hint - use modulo
