@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
