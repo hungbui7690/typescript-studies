@@ -1,12 +1,13 @@
 /*
-  JS - Constructors P1
+  JS - Constructors P2
 
 */
 
 class Player {
-  // (***) will be call every time we instantiate a new instance
-  constructor() {
-    console.log('CONSTRUCTOR')
+  // add property
+  constructor(first, last) {
+    this.first = first
+    this.last = last
   }
 
   taunt() {
@@ -14,8 +15,10 @@ class Player {
   }
 }
 
-const player1 = new Player()
-player1.taunt()
+// use here
+const player = new Player('Bic', 'Babon')
+player.taunt()
 
-const player2 = new Player()
-player2.taunt()
+// log
+console.log(player.first)
+console.log(player.last)
