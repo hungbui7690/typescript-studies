@@ -1,41 +1,32 @@
 /*
-  Object Types Solution
+  Array Types SOLUTION
 
 */
-////////////////////////////////////
-// Write the Movie type alias to make the following two variables properly typed
-// Make sure that "originalTitle" is optional and "title" is readonly
-var dune = {
-    title: 'Dune',
-    originalTitle: 'Dune Part One',
-    director: 'Denis Villeneuve',
-    releaseYear: 2021,
-    boxOffice: {
-        budget: 165000000,
-        grossUS: 108327830,
-        grossWorldwide: 400671789
-    }
+/////////////////////////////////////
+// PART 1
+/////////////////////////////////////
+// Create an empty array of numbers called "ages":
+var age = [];
+/////////////////////////////////////
+// PART 2
+/////////////////////////////////////
+// Create an array variable called gameBoard that starts as an empty array.
+// It should be typed to hold a 2 dimensional array of strings
+var gameBoard = [];
+var product = { name: 'coffee mug', price: 11.5 };
+/////////////////////////////////////
+// PART 4
+/////////////////////////////////////
+// Write a function called getTotal that accepts an array of Product types
+// It should return the sum of all the products' prices
+var getTotal = function (products) {
+    return products.reduce(function (acc, cur) {
+        return (acc += cur.price);
+    }, 0);
 };
-var cats = {
-    title: 'Cats',
-    director: 'Tom Hooper',
-    releaseYear: 2019,
-    boxOffice: {
-        budget: 95000000,
-        grossUS: 27166770,
-        grossWorldwide: 73833348
-    }
-};
-////////////////////////////////////
-// Solution 1
-////////////////////////////////////
-// Write a function called getProfit that accepts a single Movie object
-// It should return the movie's worldwide gross minus its budget
-// For example...
-// getProfit(cats) => -21166652
-var getProfit = function (movie) {
-    var _a = movie.boxOffice, grossWorldwide = _a.grossWorldwide, budget = _a.budget;
-    return grossWorldwide - budget;
-};
-var profit = getProfit(cats);
-console.log(profit);
+var productsList = [
+    { name: 'coffee mug', price: 11.5 },
+    { name: 'tea', price: 9.99 },
+];
+var total = getTotal(productsList);
+console.log(total);
