@@ -1,34 +1,38 @@
 /*
-  JS - Private Fields P3
+  JS - Getters
 
 */
 
 class Player {
-  #score = 0
+  #score = 9
   numLives = 10
 
   constructor(first, last) {
     this.first = first
     this.last = last
-    this.#secret() // call private method
+    this.#secret()
   }
 
-  // (***)
+  // (***) need to have get keyword
+  get fullName() {
+    return `${this.first} ${this.last}`
+  }
+  get score() {
+    return this.#score
+  }
+
   getScore() {
     return this.#score
   }
   setScore(newScore) {
     this.#score = newScore
   }
-
   taunt() {
     console.log('Booya!!')
   }
   loseLife() {
     this.numLives--
   }
-
-  // private method
   #secret() {
     console.log('SECRET')
   }
@@ -37,7 +41,5 @@ class Player {
 const player = new Player('Bic', 'Babon')
 console.log(player)
 
-// (***)
-console.log(player.getScore())
-player.setScore(20)
-console.log(player.getScore())
+console.log(player.fullName) // (***)
+console.log(player.score)
