@@ -1,12 +1,16 @@
 /*
-  Annotating Classes In TypeScript P2
+  Class Fields In TypeScript
+  - score & numLives in previous chapter
 
 */
 
-// hover and read the error > then solve
 class Player {
-  first: string // for this.first
-  last: string // for this.last
+  first: string
+  last: string
+
+  // (***)
+  score: number = 0
+  numLives: number = 10
 
   constructor(first: string, last: string) {
     this.first = first
@@ -15,3 +19,7 @@ class Player {
 }
 
 const elton = new Player('Elton', 'Steele')
+console.log(elton)
+
+// (***)
+elton.score = 1000
