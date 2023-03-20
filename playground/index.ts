@@ -1,11 +1,12 @@
 /*
-  A Bit More On Enums
-  
+  Enums Behind The Scenes
+  - check js file after compiled
+
 */
 
-// now SHIPPED = 11, DELIVERED = 12, RETURNED = 13
+// try to add const and remove "const" before "enum" > then check JS file to see the JS code
 enum OrderStatus {
-  PENDING = 10, // (***)
+  PENDING = 10,
   SHIPPED,
   DELIVERED,
   RETURNED,
@@ -16,7 +17,11 @@ enum ArrowKeys {
   DOWN = 'down',
   LEFT = 'left',
   RIGHT = 'right',
-  ERROR = 234, // can have multiple types of value
+  ERROR = 234,
 }
 
-let move = ArrowKeys.LEFT
+// (***)
+const order = {
+  orderNumber: 345322,
+  status: OrderStatus.PENDING,
+}
