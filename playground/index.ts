@@ -1,15 +1,12 @@
 /*
-  More Object Types
+  Excess Properties P1
 
 */
 
-// setup pattern for object
-let coordinate: { x: number; y: number } = {
-  x: 34,
-  y: 2,
+// function that has 2 params: first & last
+function printName(person: { first: string; last: string }): void {
+  console.log(`${person.first} ${person.last}`)
 }
 
-// function that returns object
-function randomCoordinate(): { x: number; y: number } {
-  return { x: 1, y: 2 }
-}
+// err if we add 1 more property to the object
+printName({ first: 'Mick', last: 'Jagger', age: 18 })
