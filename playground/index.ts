@@ -1,5 +1,5 @@
 /*
-  Interface Methods P1
+  Interface Methods P2
   
 */
 
@@ -9,8 +9,8 @@ interface Person {
   last: string
   nickName?: string
 
-  // sayHi is a method, and must return string
-  sayHi: () => string
+  // alternative way
+  sayHi(): string
 }
 
 const john: Person = {
@@ -19,7 +19,6 @@ const john: Person = {
   last: 'Hardy',
   nickName: 'J',
 
-  // use here
   sayHi: function () {
     return `Hello!`
   },
