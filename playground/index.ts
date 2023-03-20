@@ -1,27 +1,25 @@
 /*
-  Enums Behind The Scenes
-  - check js file after compiled
+  Introducing Interfaces
+  - pic
+  - describe the shape of objects 
 
 */
 
-// try to add const and remove "const" before "enum" > then check JS file to see the JS code
-enum OrderStatus {
-  PENDING = 10,
-  SHIPPED,
-  DELIVERED,
-  RETURNED,
+// type alias
+type Point = {
+  x: number
+  y: number
 }
 
-enum ArrowKeys {
-  UP = 'up',
-  DOWN = 'down',
-  LEFT = 'left',
-  RIGHT = 'right',
-  ERROR = 234,
+const pt: Point = { x: 1, y: 10 }
+
+//////////////////////////////
+
+// interface > no = sign
+interface IPoint {
+  x: number
+  y: number
 }
 
-// (***)
-const order = {
-  orderNumber: 345322,
-  status: OrderStatus.PENDING,
-}
+// right now, it is similar to "type alias", but we will learn about the different later
+const ptX: IPoint = { x: 1, y: 213 }
