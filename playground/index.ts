@@ -1,49 +1,33 @@
 /*
-  Array Types SOLUTION
+  Introducing Union Types
+  - pic
+  - multiple types
 
 */
 
-/////////////////////////////////////
-// PART 1
-/////////////////////////////////////
-// Create an empty array of numbers called "ages":
-const age: [] = []
+let age: number | string = 21
+age += 1
+age = '24'
 
 /////////////////////////////////////
-// PART 2
-/////////////////////////////////////
-// Create an array variable called gameBoard that starts as an empty array.
-// It should be typed to hold a 2 dimensional array of strings
-const gameBoard: string[][] = []
 
-/////////////////////////////////////
-// PART 3
-/////////////////////////////////////
-// Create a Product type that contains a name and a price.
-// An example product could be:
-// {name: "coffee mug", price: 11.50}
-type Product = {
-  name: string
-  price: number
+type Point = {
+  x: number
+  y: number
 }
 
-const product: Product = { name: 'coffee mug', price: 11.5 }
-
-/////////////////////////////////////
-// PART 4
-/////////////////////////////////////
-// Write a function called getTotal that accepts an array of Product types
-// It should return the sum of all the products' prices
-const getTotal = (products: Product[]): number => {
-  return products.reduce((acc, cur) => {
-    return (acc += cur.price)
-  }, 0)
+type Loc = {
+  lat: number
+  lng: number
 }
 
-const productsList = [
-  { name: 'coffee mug', price: 11.5 },
-  { name: 'tea', price: 9.99 },
-]
+// (***)
+let coord: Point | Loc = {
+  x: 1,
+  y: 20,
+}
 
-const total = getTotal(productsList)
-console.log(total)
+coord = {
+  lat: 324.123,
+  lng: 123.213,
+}
