@@ -1,8 +1,17 @@
 /*
-  Working With Array Types P1
+  Working With Array Types P2
   - pic 
 
 */
 
-const empty: [] = [] // when we declare like this, we cannot add anything to this array
-empty.push(1)
+// with this definition, we can have this array empty, or we can add items to this array
+const activeUsers: string[] = []
+activeUsers.push('joe')
+activeUsers.push('tony')
+
+// array of numbers
+const ageList: number[] = [45, 14, 77]
+ageList[0] = 99
+
+// array of boolean
+const boolList: boolean[] = [true, true, false]
