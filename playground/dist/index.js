@@ -1,14 +1,15 @@
 "use strict";
 /*
-  Working With Events P1
-  - index.html > add form
+  Working With Events P2
 
 */
-const form = document.querySelector('form'); // (1) when we use element selector > TS knows right away this is a form > hover
+const form = document.querySelector('form');
 const btn = document.querySelector('.btn');
 const input = document.getElementById('todo-input');
-// (2)
-form.addEventListener('submit', (e) => {
+// (1) when we move the callback function out, TS knows nothing about "e"
+function handleSubmit(e) {
     e.preventDefault();
     console.log('SUBMIT !!!');
-});
+}
+// (2)
+form.addEventListener('submit', handleSubmit);
