@@ -1,16 +1,13 @@
 /*
-  Type Narrowing w Union Types P3
-  
+  Union Types and Arrays P1
+  - we want array to hold multiple type 
+
 */
 
-function calcTax(price: number | string, tax: number) {
-  // type narrowing
-  if (typeof price === 'string') price = Number(price.replace('$', ''))
+const stuff: any[] = [1, 2, 'jun', false] // we want to avoid any as much as possible
 
-  return price * tax
-}
+// the correct way > hold number and string at the same time
+const thing: (number | string)[] = [1, 2, 3, 'jc']
 
-const tax1 = calcTax(45.6, 0.2)
-const tax2 = calcTax('$45.60', 0.2)
-
-console.log(tax1, tax2)
+// with this definition, array can be either all numbers or strings
+const x: number[] | string[] = [1, 2, 'jc']
