@@ -1,5 +1,5 @@
 /*
-  Working With Events P2
+  Working With Events P3
 
 */
 
@@ -7,11 +7,10 @@ const form = document.querySelector('form')!
 const btn = document.querySelector('.btn')! as HTMLButtonElement
 const input = document.getElementById('todo-input')! as HTMLInputElement
 
-// (1) when we move the callback function out, TS knows nothing about "e"
-function handleSubmit(e) {
+// we tell TS that e === Event or SubmitEvent
+function handleSubmit(e: SubmitEvent) {
   e.preventDefault()
   console.log('SUBMIT !!!')
 }
 
-// (2)
 form.addEventListener('submit', handleSubmit)
