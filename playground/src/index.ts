@@ -1,6 +1,14 @@
 /*
-  Generics Arrow Functions & TSX Files
-  - if we work with TS + React > TSX
-    > check index.tsx
-
+  Generics With Multiple Types P1
+  
 */
+
+function merge(obj1, obj2) {
+  return {
+    ...obj1,
+    ...obj2,
+  }
+}
+
+const combined = merge({ name: 'colt' }, { pets: ['blue', 'elton'] })
+console.log(combined)
