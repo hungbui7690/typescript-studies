@@ -1,12 +1,10 @@
 /*
-  Introducing Generics P1
+  Introducing Generics P2
   - pic 
 
 */
 
-// generic is more generic than this
-function doThing(thing: number | string): number | string {
-  return 1
-}
+const nums: number[] = []
 
-// with generic, we can define a function which receive types, and return exactly the type it received > accept string, then return string > accept number, then return number
+const numbsX: Array<number> = [] // we learned this syntax before
+const colors: Array<string> = []
