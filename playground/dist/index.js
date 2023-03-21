@@ -1,12 +1,8 @@
 /*
-  Changing Compilation Module System P2
-  - imagine if we have 100 of files > we cannot do this
-    
-  - change tsconfig.json
-      "module": "ES2015"
-  
-  - add type=module in script tag
-  - add extension = .js
+  Import/Export Syntax In Depth
+  - currently, we are using named export
+  - create User.ts
+    > if we have only 1 thing to export > default export
 
 */
 import { add } from './utils.js';
