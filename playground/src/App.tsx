@@ -1,5 +1,7 @@
 /*
-  useState With TypeScript P2
+  useState With TypeScript P3
+  - since we use the interface many times > create a separated file 
+    > create models/items.ts > contain TS definition 
 
 */
 
@@ -7,12 +9,7 @@ import React, { useState } from 'react'
 import './App.css'
 import ShoppingList from './components/ShoppingList'
 
-// (1)
-interface Item {
-  id: number
-  product: string
-  quantity: number
-}
+import Item from './models/items' // (***)
 
 function App() {
   // (2) use here
