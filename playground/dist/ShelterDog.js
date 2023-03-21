@@ -5,3 +5,4 @@ export default class ShelterDog extends Dog {
         this.shelter = shelter;
     }
 }
+//# sourceMappingURL=ShelterDog.js.map

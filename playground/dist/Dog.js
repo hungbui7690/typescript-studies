@@ -8,3 +8,4 @@ export default class Dog {
         console.log("WOOF WOOF!!!");
     }
 }
+//# sourceMappingURL=Dog.js.map
