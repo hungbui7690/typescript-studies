@@ -1,12 +1,9 @@
 /*
-  Writing Our First Generic P1
+  Writing Our First Generic P2
 
 */
 
-function numberIdentity(item: number): number {
-  return item
-}
-
-function stringIdentity(item: string): string {
+// this is not good, since we can have the string in param, and return number > no relationship between input and output
+function identity(item: any): any {
   return item
 }
