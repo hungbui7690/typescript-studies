@@ -1,15 +1,16 @@
 "use strict";
 /*
-  Truthiness Guards P1
-  - pic
+  Truthiness Guards P2
 
 */
-// this element may exist or maybe null
-const el = document.getElementById('idk');
-// hover on each case
-if (el) {
-    el.addEventListener('click', () => { });
-}
-else {
-    el;
-}
+const printLetters = (word) => {
+    if (word) {
+        for (let char of word) {
+            console.log(char);
+        }
+    }
+    else {
+        word; // hover
+        console.log(`You did not pass in a word !!`);
+    }
+};
