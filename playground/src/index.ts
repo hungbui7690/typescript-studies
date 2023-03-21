@@ -1,29 +1,51 @@
 /*
-  Working With Type Predicates P2
-
+  Discriminated Unions
+  - pic
+  - create common property 
+    > each interface must have a field to discriminate
+  
 */
 
-interface Cat {
+interface Rooster {
   name: string
-  numLives: number
+  weight: number
+  age: number
+  kind: 'rooster' // (***)
 }
-
-interface Dog {
+interface Cow {
   name: string
-  breed: string
+  weight: number
+  age: number
+  kind: 'cow' // (***)
+}
+interface Pig {
+  name: string
+  weight: number
+  age: number
+  kind: 'pig' // (***)
 }
 
-// add return type > :animal is Cat
-function isCat(animal: Cat | Dog): animal is Cat {
-  return (animal as Cat).numLives !== undefined
-}
+type FarmAnimal = Pig | Rooster | Cow
 
-function makeNoise(animal: Cat | Dog): string {
-  if (isCat(animal)) {
-    animal // now, animal === Cat > TS can understand
-    return `Meow`
-  } else {
-    animal // Dog
-    return `Bark`
+function getAnimalSound(animal: FarmAnimal) {
+  switch (animal.kind) {
+    case 'pig':
+      animal
+      return 'Oink!'
+    case 'cow':
+      animal
+      return 'Mooo!'
+    case 'rooster':
+      animal
+      return 'Cookoo!'
   }
 }
+
+const stevie: Rooster = {
+  name: 'Stevie Chicks',
+  weight: 2,
+  age: 1.5,
+  kind: 'rooster',
+}
+
+console.log(getAnimalSound(stevie))

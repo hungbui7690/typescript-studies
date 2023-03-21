@@ -1,23 +1,28 @@
 "use strict";
 /*
-  Instanceof Narrowing P2
-
+  Discriminated Unions
+  - pic
+  - create common property
+    > each interface must have a field to discriminate
+  
 */
-class User {
-    constructor(username) {
-        this.username = username;
+function getAnimalSound(animal) {
+    switch (animal.kind) {
+        case 'pig':
+            animal;
+            return 'Oink!';
+        case 'cow':
+            animal;
+            return 'Mooo!';
+        case 'rooster':
+            animal;
+            return 'Cookoo!';
     }
 }
-class Company {
-    constructor(name) {
-        this.name = name;
-    }
-}
-function printName(entity) {
-    if (entity instanceof User) {
-        entity;
-    }
-    else {
-        entity;
-    }
-}
+const stevie = {
+    name: 'Stevie Chicks',
+    weight: 2,
+    age: 1.5,
+    kind: 'rooster',
+};
+console.log(getAnimalSound(stevie));
