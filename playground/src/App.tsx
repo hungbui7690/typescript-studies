@@ -1,8 +1,5 @@
 /*
-  A Note on ReactFC
-  - FC === FunctionalComponent 
-    > some tutorial use this 
-      > test in Greeter.tsx
+  Props With TypeScript P1
 
 */
 
@@ -12,9 +9,10 @@ import './App.css'
 import Greeter from './components/Greeter'
 
 function App() {
+  // (***) pass props > error
   return (
     <div className='App'>
-      <Greeter />
+      <Greeter person='Bic' />
     </div>
   )
 }
