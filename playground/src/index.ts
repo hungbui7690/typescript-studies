@@ -1,26 +1,17 @@
 /*
-  Installing Webpack Dependencies
-  > npm install --save-dev webpack webpack-cli typescript ts-loader
-    > why do we need to install typescript, though it was installed globally 
-      + reason: because we want to version of TS in package.json
-    > ts-loader
-      + middleman between TS & Webpack: 
-        > call tsc command 
-        > hand js files to webpack
+  Basic Webpack Config P2
+  - remove .js when import
+    > another error > cannot handle .ts file > fix in webpack.config > add .tsx 
+      > test: /\.tsx?$/
+    > ok > now we just have a warning that said: 'mode' option has not been set > but if we check dist/ > we should see bundle.js
 
-//////////////////////////////////////////
-
-  Basic Webpack Config P1
-  - create webpack.config.js
-  - setup build command in package.json
-
-  > now if we build > error > next lesson
-
+  - index.html > link to bundle.js
+    > everything is ok > but what if we want to debug js file > how? > next lesson
 */
 
-import Dog from './Dog.js'
-import ShelterDog from './ShelterDog.js'
-import { add, multiply, divide } from './utils.js'
+import Dog from './Dog'
+import ShelterDog from './ShelterDog'
+import { add, multiply, divide } from './utils'
 console.log('FROM INDEX FILE!!!!!!!!')
 
 const elton = new Dog('Elton', 'Aussie', 0.5)
