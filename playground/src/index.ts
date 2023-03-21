@@ -1,22 +1,34 @@
 /*
-  Writing Our First Generic P3
+  Writing Another Generic Function
+  - input [1,4,7] > return random number
+  - input [true, false, true] > return random boolean
+  - input [{}, {}, {}] <Cat> > return random Cat
 
 */
 
-// generic type === <Type> === <genericType> === <T>
-// can we use any letter or word we want, but the convention is using <T>
-function identity<Type>(item: Type): Type {
-  return item
+function getRandomElement<T>(list: T[]): T {
+  const randomIndex = Math.floor(Math.random() * list.length)
+  return list[randomIndex]
 }
 
-identity<number>(7)
-identity<string>('hello')
+const num = getRandomElement<number>([1, 2, 3])
+console.log(num)
 
-///////////////////////////////
+const str = getRandomElement<string>(['a', 'b', 'c'])
+console.log(str)
+
+////////////////////////
 
 interface Cat {
   name: string
-  breed: string
+  age: number
 }
 
-identity<Cat>({ name: 'Bic', breed: 'English Short Hair' })
+const cats = [
+  { name: 'bic', age: 5 },
+  { name: 'miu', age: 2 },
+  { name: 'bu', age: 1 },
+]
+
+const cat = getRandomElement<Cat>(cats)
+console.log(cat)

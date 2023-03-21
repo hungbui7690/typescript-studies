@@ -1,13 +1,23 @@
 "use strict";
 /*
-  Writing Our First Generic P3
+  Writing Another Generic Function
+  - input [1,4,7] > return random number
+  - input [true, false, true] > return random boolean
+  - input [{}, {}, {}] <Cat> > return random Cat
 
 */
-// generic type === <Type> === <genericType> === <T>
-// can we use any letter or word we want, but the convention is using <T>
-function identity(item) {
-    return item;
+function getRandomElement(list) {
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex];
 }
-identity(7);
-identity('hello');
-identity({ name: 'Bic', breed: 'English Short Hair' });
+const num = getRandomElement([1, 2, 3]);
+console.log(num);
+const str = getRandomElement(['a', 'b', 'c']);
+console.log(str);
+const cats = [
+    { name: 'bic', age: 5 },
+    { name: 'miu', age: 2 },
+    { name: 'bu', age: 1 },
+];
+const cat = getRandomElement(cats);
+console.log(cat);
