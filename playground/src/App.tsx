@@ -1,6 +1,10 @@
 /*
-  Creating Our ShoppingItem Form
-  - create ShoppingListForm
+  useRef With TypeScript P1
+  - 2 ways to get the value of input: 
+    + useState() 
+    + useRef() > we will use this way
+
+    > https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks
 
 */
 
