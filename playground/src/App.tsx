@@ -1,8 +1,6 @@
 /*
-  Props With TypeScript P3
-  - pic
-  - sometimes, we want to pass many things > if we pass inline like this > noisy 
-    > Greeter.tsx > create type alias / interface
+  Props With TypeScript P4
+  - destructure
 
 */
 
