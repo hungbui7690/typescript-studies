@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "lite-server",
-    "build": "webpack",
-    "serve": "webpack serve"
+    "build": "webpack -c webpack.prod.js --mode production",
+    "serve": "webpack serve -c webpack.dev.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "lite-server": "^2.6.1",
     "lodash": "^4.17.21"
   },

@@ -1,32 +1,24 @@
 /*
-  Webpack Dev Server
-  - webpack config: 
-    > mode: 'development', 
-    > output: {
-        publicPath: '/dist',
-      },
-  - after this, we can see the bundle.js is not minified
-
-
-
-  - about wp dev server: it is live server + bundling & save in memory (not in dist/)
-    > https://github.com/webpack/webpack-dev-server
-    > npm install --save-dev webpack-dev-server
-
-  - to run dev server
-    > npx webpack serve
-    > npm run serve
+  Production Configuration
+  - right now, our setup is for development
+  - create webpack.prod.js + change dev config file to webpack.dev.js
+  - config build command
+    + serve command: dev
+    + build command: prod
 
   
-  (***) after start server, we can delete all files in dist/ > everything still works because it used the data in the memory 
+  - we also need to clean dist/ everytime we build
+    + add hash to filename > webpack.prod.js
+      > [hash] or [chunkhash] or [contenthash]
+    + now, everytime we build, we create a new file 
+
+  
+  Clean Webpack Plugin
+  > npm i clean-webpack-plugin
+  > setup in webpack.prod.js
 
 
-  (***) for webpack 5, need to have this: 
-    devServer: {
-      static: {
-        directory: path.join(__dirname, '/'),
-      },
-    },
+
 */
 
 import Dog from './Dog'
