@@ -1,17 +1,11 @@
 /*
-  Creating Our ShoppingList Component P1
-  - hierarchy
-    > App
-      - ShoppingList
-        > ShoppingListForm
-
-  - create components/ShoppingList & import
-
+  Creating Our ShoppingList Component P2
+  - ShoppingList
 */
 
 import React from 'react'
 import './App.css'
-import ShoppingList from './components/ShoppingList' // import
+import ShoppingList from './components/ShoppingList'
 
 function App() {
   return (
