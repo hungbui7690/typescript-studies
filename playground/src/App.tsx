@@ -1,18 +1,22 @@
 /*
-  Props With TypeScript P4
-  - destructure
+  Creating Our ShoppingList Component P1
+  - hierarchy
+    > App
+      - ShoppingList
+        > ShoppingListForm
+
+  - create components/ShoppingList & import
 
 */
 
 import React from 'react'
 import './App.css'
-
-import Greeter from './components/Greeter'
+import ShoppingList from './components/ShoppingList' // import
 
 function App() {
   return (
     <div className='App'>
-      <Greeter person='Bic' />
+      <ShoppingList />
     </div>
   )
 }
