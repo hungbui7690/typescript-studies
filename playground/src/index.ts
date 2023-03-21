@@ -1,9 +1,6 @@
 /*
-  Writing Another Generic Function
-  - input [1,4,7] > return random number
-  - input [true, false, true] > return random boolean
-  - input [{}, {}, {}] <Cat> > return random Cat
-
+  Inferred Generic Type Parameters
+  
 */
 
 function getRandomElement<T>(list: T[]): T {
@@ -11,24 +8,9 @@ function getRandomElement<T>(list: T[]): T {
   return list[randomIndex]
 }
 
-const num = getRandomElement<number>([1, 2, 3])
-console.log(num)
-
-const str = getRandomElement<string>(['a', 'b', 'c'])
+// infer > we don't need to give the type of argument > not always work
+const str = getRandomElement(['a', 'b', 'c'])
 console.log(str)
 
-////////////////////////
-
-interface Cat {
-  name: string
-  age: number
-}
-
-const cats = [
-  { name: 'bic', age: 5 },
-  { name: 'miu', age: 2 },
-  { name: 'bu', age: 1 },
-]
-
-const cat = getRandomElement<Cat>(cats)
-console.log(cat)
+// in this case, if we don't specify the type > return the wrong type
+const btn = document.querySelector('.btn')
