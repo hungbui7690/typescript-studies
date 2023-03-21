@@ -1,11 +1,15 @@
 "use strict";
 /*
-  Typeof Guards P2
+  Truthiness Guards P1
+  - pic
 
 */
-function triple(value) {
-    if (typeof value === 'string') {
-        return value.repeat(3);
-    }
-    return value * 3;
+// this element may exist or maybe null
+const el = document.getElementById('idk');
+// hover on each case
+if (el) {
+    el.addEventListener('click', () => { });
+}
+else {
+    el;
 }
