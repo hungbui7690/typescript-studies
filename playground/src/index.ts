@@ -1,11 +1,22 @@
 /*
-  Default Type Parameters P2
-  
+  Writing Generic Classes P1
 */
 
-function makeEmptyArray<T = number>(): T[] {
-  return []
+interface Song {
+  title: string
+  artist: string
 }
 
-// from unknown[] to number[]
-const str = makeEmptyArray()
+interface Video {
+  title: string
+  creator: string
+  resolution: string
+}
+
+class VideoPlaylist {
+  public videos: string[] = []
+}
+
+class SongPlaylist {
+  public songs: string[] = []
+}

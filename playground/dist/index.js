@@ -1,10 +1,14 @@
 "use strict";
 /*
-  Default Type Parameters P2
-  
+  Writing Generic Classes P1
 */
-function makeEmptyArray() {
-    return [];
+class VideoPlaylist {
+    constructor() {
+        this.videos = [];
+    }
 }
-// from unknown[] to number[]
-const str = makeEmptyArray();
+class SongPlaylist {
+    constructor() {
+        this.songs = [];
+    }
+}
