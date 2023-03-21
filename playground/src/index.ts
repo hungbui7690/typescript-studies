@@ -1,11 +1,15 @@
 /*
-  Another Example Of A BuiltIn Generic P1
-  - create an input in index.html
+  Another Example Of A BuiltIn Generic P2
+  - create a button in index.html
 
 */
 
-// hover querySelector()
 const inputEl = document.querySelector<HTMLInputElement>('#username')!
 console.dir(inputEl)
 
 inputEl.value = 'Hack'
+
+///////////////////////////////////////
+
+// Example 2: we tell TS the type we want the function return to us
+const btn = document.querySelector<HTMLButtonElement>('.btn')!
