@@ -1,8 +1,19 @@
 "use strict";
 /*
-  Narrowing With The In Operator P1
+  Narrowing With The In Operator P2
 
 */
-const pet = { name: 'Kitty', age: 20 };
-console.log('name' in pet);
-console.log('age' in pet);
+// hover media in each condition
+function getRuntime(media) {
+    if ('numEpisodes' in media) {
+        return media.numEpisodes * media.episodeDuration;
+    }
+    return media.duration;
+}
+const runtime1 = getRuntime({ title: 'Amadeus', duration: 140 });
+const runtime2 = getRuntime({
+    title: 'White Collar',
+    numEpisodes: 33,
+    episodeDuration: 45,
+});
+console.log(runtime1, runtime2);
