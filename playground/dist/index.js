@@ -1,16 +1,11 @@
 "use strict";
 /*
-  Truthiness Guards P2
+  Equality Narrowing
 
 */
-const printLetters = (word) => {
-    if (word) {
-        for (let char of word) {
-            console.log(char);
-        }
+// the only way for x === y is to have the same type and same value > equality narrowing
+function someDemo(x, y) {
+    if (x === y) {
+        return;
     }
-    else {
-        word; // hover
-        console.log(`You did not pass in a word !!`);
-    }
-};
+}
