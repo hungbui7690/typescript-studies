@@ -2,11 +2,12 @@ const path = require('path')
 
 module.exports = {
   entry: './src/index.ts',
-  devtool: 'inline-source-map', // (***)
+  mode: 'development', // (***)
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.tsx?$/, // ts or tsx
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -18,5 +19,13 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist', // (***)
+  },
+
+  // (***) for webpack 5 > need to have this
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '/'),
+    },
   },
 }
