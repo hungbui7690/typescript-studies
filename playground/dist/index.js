@@ -1,19 +1,16 @@
 "use strict";
 /*
-  Narrowing With The In Operator P2
+  Instanceof Narrowing P1
+  - pic
+  - work for classes
+
+  > [1, 2] instanceof Array
+  > new Date() instanceof Date
 
 */
-// hover media in each condition
-function getRuntime(media) {
-    if ('numEpisodes' in media) {
-        return media.numEpisodes * media.episodeDuration;
+function printFullDate(date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
     }
-    return media.duration;
+    console.log(new Date(date).toUTCString());
 }
-const runtime1 = getRuntime({ title: 'Amadeus', duration: 140 });
-const runtime2 = getRuntime({
-    title: 'White Collar',
-    numEpisodes: 33,
-    episodeDuration: 45,
-});
-console.log(runtime1, runtime2);
