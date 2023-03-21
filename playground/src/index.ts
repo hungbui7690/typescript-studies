@@ -1,10 +1,11 @@
 /*
-  Introducing Generics P2
-  - pic 
+  Another Example Of A BuiltIn Generic P1
+  - create an input in index.html
 
 */
 
-const nums: number[] = []
+// hover querySelector()
+const inputEl = document.querySelector<HTMLInputElement>('#username')!
+console.dir(inputEl)
 
-const numbsX: Array<number> = [] // we learned this syntax before
-const colors: Array<string> = []
+inputEl.value = 'Hack'

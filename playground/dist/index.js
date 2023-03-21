@@ -1,9 +1,10 @@
 "use strict";
 /*
-  Introducing Generics P2
-  - pic
+  Another Example Of A BuiltIn Generic P1
+  - create an input in index.html
 
 */
-const nums = [];
-const numbsX = []; // we learned this syntax before
-const colors = [];
+// hover querySelector()
+const inputEl = document.querySelector('#username');
+console.dir(inputEl);
+inputEl.value = 'Hack';
