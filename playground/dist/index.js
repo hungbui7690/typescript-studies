@@ -1,20 +1,9 @@
 "use strict";
 /*
-  Working With Axios Types P2
+  Working With Axios Types P3
   - https://jsonplaceholder.typicode.com/users/1
 
-
-  - check index.d.ts, we can see that AxiosResponse.data has type of T
-      get<T = any, R = AxiosResponse<T>, D = any>(url: string, config?:
-
-      export interface AxiosResponse<T = any, D = any> {
-      data: T;
-      status: number;
-      statusText: string;
-      headers: RawAxiosResponseHeaders | AxiosResponseHeaders;
-      config: InternalAxiosRequestConfig<D>;
-      request?: any;
-    }
+  - based on the data, we can create interface
 
 */
 var __importDefault = (this && this.__importDefault) || function (mod) {
@@ -22,10 +11,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-// we set the type of T = boolean > hover: we will see the response type = boolean
+// T = User
 axios_1.default
     .get('https://jsonplaceholder.typicode.com/users/1')
     .then((res) => {
-    console.log(res.data);
+    const { data } = res; // now data has type of User
+    data.company.catchPhrase; // now, we can get all properties of User
+    printUser(data); // (b)
 })
     .catch((e) => console.log(e));
+// (a)
+function printUser(user) {
+    console.log(user.name);
+    console.log(user.email);
+    console.log(user.phone);
+}
