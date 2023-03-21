@@ -1,16 +1,23 @@
 "use strict";
 /*
-  Instanceof Narrowing P1
-  - pic
-  - work for classes
-
-  > [1, 2] instanceof Array
-  > new Date() instanceof Date
+  Instanceof Narrowing P2
 
 */
-function printFullDate(date) {
-    if (date instanceof Date) {
-        console.log(date.toUTCString());
+class User {
+    constructor(username) {
+        this.username = username;
     }
-    console.log(new Date(date).toUTCString());
+}
+class Company {
+    constructor(name) {
+        this.name = name;
+    }
+}
+function printName(entity) {
+    if (entity instanceof User) {
+        entity;
+    }
+    else {
+        entity;
+    }
 }
