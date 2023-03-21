@@ -1,7 +1,21 @@
 /*
-  Setting Up a Project P2
-  - import lodash 
-    > err > fix in next lesson
+  Installing Webpack Dependencies
+  > npm install --save-dev webpack webpack-cli typescript ts-loader
+    > why do we need to install typescript, though it was installed globally 
+      + reason: because we want to version of TS in package.json
+    > ts-loader
+      + middleman between TS & Webpack: 
+        > call tsc command 
+        > hand js files to webpack
+
+//////////////////////////////////////////
+
+  Basic Webpack Config P1
+  - create webpack.config.js
+  - setup build command in package.json
+
+  > now if we build > error > next lesson
+
 */
 
 import Dog from './Dog.js'
