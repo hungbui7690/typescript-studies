@@ -1,20 +1,27 @@
 /*
-  Instanceof Narrowing P2
+  Working With Type Predicates P1
+  - pic
 
 */
 
-class User {
-  constructor(public username: string) {}
+interface Cat {
+  name: string
+  numLives: number
 }
 
-class Company {
-  constructor(public name: string) {}
+interface Dog {
+  name: string
+  breed: string
 }
 
-function printName(entity: User | Company) {
-  if (entity instanceof User) {
-    entity
-  } else {
-    entity
+// (***)
+function isCat(animal: Cat | Dog) {
+  return (animal as Cat).numLives !== undefined
+}
+
+function makeNoise(animal: Cat | Dog): string {
+  if (isCat(animal)) {
+    animal // this function just work for human, but not for TS > hover, we can see animal is still union type
+    return `Meow`
   }
 }
