@@ -1,6 +1,5 @@
 import React from 'react'
-
-import Item from '../models/items' // (***)
+import Item from '../models/items'
 
 interface ShoppingListProps {
   items: Item[]
