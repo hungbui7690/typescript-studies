@@ -1,22 +1,17 @@
 /*
-  Adding Type Constraints P3
+  Default Type Parameters P1
   
 */
 
-interface Lengthy {
-  length: number
-}
-
-function printDoubleLength<T extends Lengthy>(thing: T): number {
-  return thing.length * 2
-}
-
-printDoubleLength('hello')
-printDoubleLength(4)
+const btn = document.querySelector('.btn') // default = Element | null
 
 ////////////////////////////////////
 
-// (***) we also can re-write this function without using Generic Type
-function printDoubleLengthX(thing: Lengthy): number {
-  return thing.length * 2
+function makeEmptyArray<T>(): T[] {
+  return []
 }
+
+const strings = makeEmptyArray<string>()
+
+// unknown type
+const strs = makeEmptyArray()
