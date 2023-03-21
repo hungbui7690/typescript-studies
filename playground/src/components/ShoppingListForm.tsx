@@ -1,12 +1,15 @@
 import React, { useRef } from 'react'
 
 const ShoppingListForm = (): JSX.Element => {
-  // check cheat sheets
-  const inputRef = useRef()
+  // (***)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Submit Form!!')
+
+    // (***)
+    const inputValue = inputRef.current!.value
+    console.log(inputValue)
   }
 
   return (
