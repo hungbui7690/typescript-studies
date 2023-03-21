@@ -1,16 +1,22 @@
 /*
-  Adding Type Constraints P2
+  Adding Type Constraints P3
   
 */
 
-// extends
-function merge<T extends object, U extends object>(obj1: T, obj2: U) {
-  return {
-    ...obj1,
-    ...obj2,
-  }
+interface Lengthy {
+  length: number
 }
 
-const combined = merge({ name: 'nick' }, { age: 34 })
+function printDoubleLength<T extends Lengthy>(thing: T): number {
+  return thing.length * 2
+}
 
-const combinedX = merge({ name: 'nick' }, 9) // complain
+printDoubleLength('hello')
+printDoubleLength(4)
+
+////////////////////////////////////
+
+// (***) we also can re-write this function without using Generic Type
+function printDoubleLengthX(thing: Lengthy): number {
+  return thing.length * 2
+}
