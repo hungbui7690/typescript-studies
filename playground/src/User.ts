@@ -1,6 +1,6 @@
-import { Person } from './types'
+// import type { Person } from './types' // method 1
+import { type Person } from './types' // method 2
 
-// (***)
 class User implements Person {
   constructor(public username: string, public email: string) {}
 

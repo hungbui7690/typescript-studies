@@ -1,4 +1,3 @@
-// (***)
 class User {
     constructor(username, email) {
         this.username = username;

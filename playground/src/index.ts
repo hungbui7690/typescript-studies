@@ -1,9 +1,8 @@
 /*
-  Importing Types P1
-  - create types.ts
-  - go to User.ts
-
-  > after compile > check dist/types.ts
+  Importing Types P2
+  - use import type {xx} in User.ts
+    > safer way 
+    > just use if we know that file just only have TS things
 
 */
 
