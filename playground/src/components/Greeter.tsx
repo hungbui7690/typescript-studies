@@ -1,7 +1,7 @@
 import React from 'react'
 
-// go to Type Definitions > if we want everything to be clear: add return type
-const Greeter = (): JSX.Element => {
+// (***) need to return jsx > otherwise, error
+const Greeter: React.FC = () => {
   return <h1>Hello World</h1>
 }
 
