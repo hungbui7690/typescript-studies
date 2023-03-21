@@ -1,6 +1,5 @@
 /*
-  Working With Type Predicates P1
-  - pic
+  Working With Type Predicates P2
 
 */
 
@@ -14,14 +13,17 @@ interface Dog {
   breed: string
 }
 
-// (***)
-function isCat(animal: Cat | Dog) {
+// add return type > :animal is Cat
+function isCat(animal: Cat | Dog): animal is Cat {
   return (animal as Cat).numLives !== undefined
 }
 
 function makeNoise(animal: Cat | Dog): string {
   if (isCat(animal)) {
-    animal // this function just work for human, but not for TS > hover, we can see animal is still union type
+    animal // now, animal === Cat > TS can understand
     return `Meow`
+  } else {
+    animal // Dog
+    return `Bark`
   }
 }
