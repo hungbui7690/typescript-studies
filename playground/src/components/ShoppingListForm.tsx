@@ -1,15 +1,23 @@
 import React, { useRef } from 'react'
 
-const ShoppingListForm = (): JSX.Element => {
-  // (***)
+// (***)
+interface ShoppingListFormProps {
+  onAddItem: (product: string) => void
+}
+
+// (***)
+const ShoppingListForm = ({
+  onAddItem,
+}: ShoppingListFormProps): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
     // (***)
-    const inputValue = inputRef.current!.value
-    console.log(inputValue)
+    const newProduct = inputRef.current!.value
+    onAddItem(newProduct)
+    inputRef.current!.value = ''
   }
 
   return (
