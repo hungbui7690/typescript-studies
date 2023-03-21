@@ -1,21 +1,24 @@
 /*
-  React & TypeScript Introduction
-  - pic
-  - npx create-react-app client --template typescript
+  Our First Component
+  - create components/Greeter.tsx
 
-  - there also tsconfig.json file
-'
+  - pic > cheat-sheet
+    > https://react-typescript-cheatsheet.netlify.app/
+
+
 */
 
 import React from 'react'
 import './App.css'
 
-// (***)
-const num: number = 99
-console.log(`Hello World, ${num}`)
+import Greeter from './components/Greeter' // (***)
 
 function App() {
-  return <div className='App'>App.tsx</div>
+  return (
+    <div className='App'>
+      <Greeter />
+    </div>
+  )
 }
 
 export default App
