@@ -1,7 +1,9 @@
 /*
-  Introducing Type Declarations
-  - .d.ts files: contain only type information
+  Using 3rd Party Libraries Axios
+  > npm install axios
+  > pic
 
 */
 
-console.log() // ctrl + click
+// ctrl + click > axios comes with type declaration files
+import axios from 'axios'

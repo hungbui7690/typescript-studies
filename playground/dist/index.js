@@ -1,7 +1,8 @@
 "use strict";
 /*
-  Introducing Type Declarations
-  - .d.ts files: contain only type information
+  Using 3rd Party Libraries Axios
+  > npm install axios
+  > pic
 
 */
-console.log(); // ctrl + click
+Object.defineProperty(exports, "__esModule", { value: true });
