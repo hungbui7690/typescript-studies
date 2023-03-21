@@ -1,11 +1,9 @@
 /*
-  Equality Narrowing
+  Narrowing With The In Operator P1
 
 */
 
-// the only way for x === y is to have the same type and same value > equality narrowing
-function someDemo(x: string | number, y: string | number) {
-  if (x === y) {
-    return
-  }
-}
+const pet = { name: 'Kitty', age: 20 }
+
+console.log('name' in pet)
+console.log('age' in pet)
