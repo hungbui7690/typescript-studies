@@ -1,15 +1,15 @@
 /*
-  Changing Compilation Module System P1
-  - this one, we run in browser 
-    > Uncaught ReferenceError: exports is not defined
-    > JS Engine does not know about CommonJS Module
-
-  - one solution is to remove import/export 
-  - create script tag for utils.js in index.html
+  Changing Compilation Module System P2
+  - imagine if we have 100 of files > we cannot do this 
     
+  - change tsconfig.json
+      "module": "ES2015"
+  
+  - add type=module in script tag
+  - add extension = .js
 
 */
 
-// import { add } from './utils'
+import { add } from './utils.js'
 
 const result = add(1, 2)
