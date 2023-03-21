@@ -1,13 +1,10 @@
 "use strict";
 /*
-  Default Type Parameters P1
+  Default Type Parameters P2
   
 */
-const btn = document.querySelector('.btn'); // default = Element | null
-////////////////////////////////////
 function makeEmptyArray() {
     return [];
 }
-const strings = makeEmptyArray();
-// unknown type
-const strs = makeEmptyArray();
+// from unknown[] to number[]
+const str = makeEmptyArray();
