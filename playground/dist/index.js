@@ -1,6 +1,6 @@
 "use strict";
 /*
-  Exhaustiveness Checks With Never P1
+  Exhaustiveness Checks With Never P2
   
 */
 function getAnimalSound(animal) {
@@ -14,9 +14,13 @@ function getAnimalSound(animal) {
         case 'rooster':
             animal;
             return 'Cookoo!';
-        // (***) we should never make it here, if we handle all cases correctly! > because it show error here > there should be some cases that we did not handle
+        case 'sheep': // (***)
+            animal;
+            return 'Baaaaa!';
+        // no err > all cases are handled
         default:
-            const shouldNeverGetHere = animal;
+            const _exhaustiveCheck = animal;
+            return _exhaustiveCheck;
     }
 }
 const stevie = {

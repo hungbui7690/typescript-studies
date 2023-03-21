@@ -1,5 +1,5 @@
 /*
-  Exhaustiveness Checks With Never P1
+  Exhaustiveness Checks With Never P2
   
 */
 
@@ -21,8 +21,6 @@ interface Pig {
   age: number
   kind: 'pig'
 }
-
-// (***) create a new interface
 interface Sheep {
   name: string
   weight: number
@@ -43,10 +41,14 @@ function getAnimalSound(animal: FarmAnimal) {
     case 'rooster':
       animal
       return 'Cookoo!'
+    case 'sheep': // (***)
+      animal
+      return 'Baaaaa!'
 
-    // (***) we should never make it here, if we handle all cases correctly! > because it show error here > there should be some cases that we did not handle
+    // no err > all cases are handled
     default:
-      const shouldNeverGetHere: never = animal
+      const _exhaustiveCheck: never = animal
+      return _exhaustiveCheck
   }
 }
 
