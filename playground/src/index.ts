@@ -1,9 +1,10 @@
 /*
-  Generics With Multiple Types P1
+  Generics With Multiple Types P2
   
 */
 
-function merge(obj1, obj2) {
+// <T,U> : hover
+function merge<T, U>(obj1: T, obj2: U) {
   return {
     ...obj1,
     ...obj2,

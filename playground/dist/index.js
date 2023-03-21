@@ -1,8 +1,9 @@
 "use strict";
 /*
-  Generics With Multiple Types P1
+  Generics With Multiple Types P2
   
 */
+// <T,U> : hover
 function merge(obj1, obj2) {
     return Object.assign(Object.assign({}, obj1), obj2);
 }
