@@ -1,42 +1,15 @@
 /*
-  The Protected Modifier P2
+  Classes and Interfaces P1
   
 */
 
-class Player {
-  private numLives: number = 99
-
-  constructor(
-    public first: string,
-    public last: string,
-    protected _score: number // (***)
-  ) {}
-
-  get fullName(): string {
-    return `${this.first} ${this.last}`
-  }
-  get score(): number {
-    return this._score
-  }
-  set score(newScore: number) {
-    if (newScore < 0) throw new Error('Score must be positive')
-    this._score = newScore
-  }
-
-  private secretMethod(): void {
-    console.log('secret!!')
-  }
+interface Colorful {
+  color: string
 }
 
-////////////////////////////
-
-class SuperPlayer extends Player {
-  isAdmin: boolean = true
-
-  maxScore() {
-    this._score = 99999 // (***)
-  }
+// (***) use "implements" keyword
+class Bike implements Colorful {
+  constructor(public color: string) {}
 }
 
-const elton = new Player('Elton', 'Steele', 100)
-console.log(elton)
+const bike = new Bike('red')
