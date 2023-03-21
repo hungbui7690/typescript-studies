@@ -1,30 +1,47 @@
 /*
-  Creating Abstract Classes P2
-  - the point of abstract class is we defined pattern that the child class must have  
+  Creating Abstract Classes P3
+
 */
 
-// this is the pattern that child class must follow
 abstract class Employee {
   constructor(public first: string, public last: string) {}
 
   abstract getPay(): number
 
-  // different than interface > super version of interface
   greet() {
     console.log('Hello')
   }
 }
 
-// must have getPay()
 class FullTimeEmployee extends Employee {
+  // (***)
+  constructor(first: string, last: string, private salary: number) {
+    super(first, last)
+  }
+
   getPay(): number {
-    return 13
+    return this.salary // (***)
   }
 }
 
-// must have getPay()
 class PartTimeEmployee extends Employee {
+  // (***)
+  constructor(
+    first: string,
+    last: string,
+    private hourlyRate: number,
+    private hoursWorked: number
+  ) {
+    super(first, last)
+  }
+
   getPay(): number {
-    return 123
+    return this.hourlyRate * this.hoursWorked // (***)
   }
 }
+
+const betty = new FullTimeEmployee('Betty', 'White', 95000)
+console.log(betty.getPay())
+
+const bill = new PartTimeEmployee('Bill', 'Billerson', 24, 1100)
+console.log(bill.getPay())

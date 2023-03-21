@@ -1,28 +1,39 @@
 "use strict";
 /*
-  Creating Abstract Classes P2
-  - the point of abstract class is we defined pattern that the child class must have
+  Creating Abstract Classes P3
+
 */
-// this is the pattern that child class must follow
 class Employee {
     constructor(first, last) {
         this.first = first;
         this.last = last;
     }
-    // different than interface > super version of interface
     greet() {
         console.log('Hello');
     }
 }
-// must have getPay()
 class FullTimeEmployee extends Employee {
+    // (***)
+    constructor(first, last, salary) {
+        super(first, last);
+        this.salary = salary;
+    }
     getPay() {
-        return 13;
+        return this.salary; // (***)
     }
 }
-// must have getPay()
 class PartTimeEmployee extends Employee {
+    // (***)
+    constructor(first, last, hourlyRate, hoursWorked) {
+        super(first, last);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
     getPay() {
-        return 123;
+        return this.hourlyRate * this.hoursWorked; // (***)
     }
 }
+const betty = new FullTimeEmployee('Betty', 'White', 95000);
+console.log(betty.getPay());
+const bill = new PartTimeEmployee('Bill', 'Billerson', 24, 1100);
+console.log(bill.getPay());
