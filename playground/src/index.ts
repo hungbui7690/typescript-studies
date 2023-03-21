@@ -1,15 +1,12 @@
 /*
-  Another Example Of A BuiltIn Generic P2
-  - create a button in index.html
+  Writing Our First Generic P1
 
 */
 
-const inputEl = document.querySelector<HTMLInputElement>('#username')!
-console.dir(inputEl)
+function numberIdentity(item: number): number {
+  return item
+}
 
-inputEl.value = 'Hack'
-
-///////////////////////////////////////
-
-// Example 2: we tell TS the type we want the function return to us
-const btn = document.querySelector<HTMLButtonElement>('.btn')!
+function stringIdentity(item: string): string {
+  return item
+}
