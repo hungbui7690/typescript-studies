@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Greeter: React.FC = () => {
-  return <h1>Hello World</h1>
+// (***)
+const Greeter = (props: { person: string }): JSX.Element => {
+  return <h1>Hello World, {props.person}</h1>
 }
 
 export default Greeter
