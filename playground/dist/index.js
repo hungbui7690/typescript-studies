@@ -1,6 +1,6 @@
 "use strict";
 /*
-  Classes and Interfaces P2
+  Classes and Interfaces P3
   
 */
 class Bike {
@@ -15,5 +15,8 @@ class Jacket {
         this.brand = brand;
         this.color = color;
     }
+    print() {
+        console.log(`${this.brand} - ${this.color}`);
+    } // (***)
 }
-const jacket = new Jacket('Prada', 'black'); // (***)
+const jacket = new Jacket('Prada', 'black');
