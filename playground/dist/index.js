@@ -1,9 +1,14 @@
 "use strict";
 /*
-  Using TypeScript Modules
-  - check dist/ after compiling
+  Changing Compilation Module System P1
+  - this one, we run in browser
+    > Uncaught ReferenceError: exports is not defined
+    > JS Engine does not know about CommonJS Module
+
+  - one solution is to remove import/export
+  - create script tag for utils.js in index.html
+    
 
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("./utils"); // (***)
-const result = (0, utils_1.add)(1, 2);
+// import { add } from './utils'
+const result = add(1, 2);
