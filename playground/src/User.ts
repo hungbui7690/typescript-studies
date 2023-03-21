@@ -1,4 +1,7 @@
-class User {
+import { Person } from './types'
+
+// (***)
+class User implements Person {
   constructor(public username: string, public email: string) {}
 
   logout() {

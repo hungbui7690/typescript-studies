@@ -1,14 +1,14 @@
 /*
-  Import/Export Syntax In Depth
-  - currently, we are using named export
-  - create User.ts 
-    > if we have only 1 thing to export > default export
+  Importing Types P1
+  - create types.ts
+  - go to User.ts
+
+  > after compile > check dist/types.ts
 
 */
 
 import { add } from './utils.js'
 
-// (***)
 import User, { userHelper } from './User.js'
 
 const result = add(1, 2)
