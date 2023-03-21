@@ -1,11 +1,9 @@
 import React, { useRef } from 'react'
 
-// (***)
 interface ShoppingListFormProps {
   onAddItem: (product: string) => void
 }
 
-// (***)
 const ShoppingListForm = ({
   onAddItem,
 }: ShoppingListFormProps): JSX.Element => {
@@ -14,7 +12,6 @@ const ShoppingListForm = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // (***)
     const newProduct = inputRef.current!.value
     onAddItem(newProduct)
     inputRef.current!.value = ''
