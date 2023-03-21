@@ -1,14 +1,12 @@
 /*
-  Working With Axios Types P3
-  - https://jsonplaceholder.typicode.com/users/1
-
-  - based on the data, we can create interface 
+  Working With Axios Types P4
+  - now, we will get list of Users
+    > https://jsonplaceholder.typicode.com/users
 
 */
 
 import axios from 'axios'
 
-// create interface based on the data
 interface User {
   id: number
   name: string
@@ -33,19 +31,18 @@ interface User {
   }
 }
 
-// T = User
+// T = User[]
 axios
-  .get<User>('https://jsonplaceholder.typicode.com/users/1')
+  .get<User[]>('https://jsonplaceholder.typicode.com/users')
   .then((res) => {
-    const { data } = res // now data has type of User
-    data.company.catchPhrase // now, we can get all properties of User
-    printUser(data) // (b)
+    const { data } = res
+    data.forEach(printUser) // (***)
   })
   .catch((e) => console.log(e))
 
-// (a)
 function printUser(user: User) {
   console.log(user.name)
   console.log(user.email)
   console.log(user.phone)
+  console.log('***********')
 }

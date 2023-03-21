@@ -1,9 +1,8 @@
 "use strict";
 /*
-  Working With Axios Types P3
-  - https://jsonplaceholder.typicode.com/users/1
-
-  - based on the data, we can create interface
+  Working With Axios Types P4
+  - now, we will get list of Users
+    > https://jsonplaceholder.typicode.com/users
 
 */
 var __importDefault = (this && this.__importDefault) || function (mod) {
@@ -11,18 +10,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-// T = User
+// T = User[]
 axios_1.default
-    .get('https://jsonplaceholder.typicode.com/users/1')
+    .get('https://jsonplaceholder.typicode.com/users')
     .then((res) => {
-    const { data } = res; // now data has type of User
-    data.company.catchPhrase; // now, we can get all properties of User
-    printUser(data); // (b)
+    const { data } = res;
+    data.forEach(printUser); // (***)
 })
     .catch((e) => console.log(e));
-// (a)
 function printUser(user) {
     console.log(user.name);
     console.log(user.email);
     console.log(user.phone);
+    console.log('***********');
 }
