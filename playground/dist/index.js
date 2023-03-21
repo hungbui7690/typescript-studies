@@ -1,14 +1,9 @@
 "use strict";
 /*
-  A Note On Namespaces
-  - https://www.typescriptlang.org/docs/handbook/namespaces.html#handbook-content
-  - kind of deprecated because now TS support ES Modules
-    > just need to know, but no need to master > since some old packages still use it (DefinitelyTyped)
-
-////////////////////////////////////////
-
-  Working Without Modules
-  - create utils.ts
+  Using TypeScript Modules
+  - check dist/ after compiling
 
 */
-add(1 + 2);
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("./utils"); // (***)
+const result = (0, utils_1.add)(1, 2);
