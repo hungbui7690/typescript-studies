@@ -1,5 +1,5 @@
 /*
-  Writing Generic Classes P1
+  Writing Generic Classes P2
 */
 
 interface Song {
@@ -13,10 +13,16 @@ interface Video {
   resolution: string
 }
 
-class VideoPlaylist {
-  public videos: string[] = []
+///////////////////////
+
+// using generic type
+class Playlist<T> {
+  public queue: T[] = []
+  add(el: T) {
+    this.queue.push(el)
+  }
 }
 
-class SongPlaylist {
-  public songs: string[] = []
-}
+const songs = new Playlist<Song>()
+const videos = new Playlist<Video>()
+songs.add({ title: 'Big Big World', artist: 'Gen Z' })
