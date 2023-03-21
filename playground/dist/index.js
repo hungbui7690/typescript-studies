@@ -1,6 +1,6 @@
 "use strict";
 /*
-  Getters and Setters
+  The Protected Modifier P1
   
 */
 class Player {
@@ -10,14 +10,12 @@ class Player {
         this._score = _score;
         this.numLives = 99;
     }
-    // (***) similar to JS
     get fullName() {
         return `${this.first} ${this.last}`;
     }
     get score() {
         return this._score;
     }
-    // (***) setter
     set score(newScore) {
         if (newScore < 0)
             throw new Error('Score must be positive');
@@ -27,7 +25,16 @@ class Player {
         console.log('secret!!');
     }
 }
+////////////////////////////
+class SuperPlayer extends Player {
+    constructor() {
+        super(...arguments);
+        this.isAdmin = true;
+    }
+    // (***)
+    maxScore() {
+        this._score = 99999;
+    }
+}
 const elton = new Player('Elton', 'Steele', 100);
-console.log(elton.fullName); // (***)
-elton.score = 199; // (***)
-console.log(elton.score);
+console.log(elton);

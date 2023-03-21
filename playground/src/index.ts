@@ -1,5 +1,5 @@
 /*
-  Getters and Setters
+  The Protected Modifier P1
   
 */
 
@@ -12,15 +12,12 @@ class Player {
     private _score: number
   ) {}
 
-  // (***) similar to JS
   get fullName(): string {
     return `${this.first} ${this.last}`
   }
   get score(): number {
     return this._score
   }
-
-  // (***) setter
   set score(newScore: number) {
     if (newScore < 0) throw new Error('Score must be positive')
     this._score = newScore
@@ -31,8 +28,16 @@ class Player {
   }
 }
 
-const elton = new Player('Elton', 'Steele', 100)
-console.log(elton.fullName) // (***)
+////////////////////////////
 
-elton.score = 199 // (***)
-console.log(elton.score)
+class SuperPlayer extends Player {
+  isAdmin: boolean = true
+
+  // (***)
+  maxScore() {
+    this._score = 99999
+  }
+}
+
+const elton = new Player('Elton', 'Steele', 100)
+console.log(elton)
