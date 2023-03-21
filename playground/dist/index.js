@@ -1,10 +1,11 @@
 "use strict";
 /*
-  The Protected Modifier P1
+  The Protected Modifier P2
   
 */
 class Player {
-    constructor(first, last, _score) {
+    constructor(first, last, _score // (***)
+    ) {
         this.first = first;
         this.last = last;
         this._score = _score;
@@ -31,9 +32,8 @@ class SuperPlayer extends Player {
         super(...arguments);
         this.isAdmin = true;
     }
-    // (***)
     maxScore() {
-        this._score = 99999;
+        this._score = 99999; // (***)
     }
 }
 const elton = new Player('Elton', 'Steele', 100);

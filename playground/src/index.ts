@@ -1,5 +1,5 @@
 /*
-  The Protected Modifier P1
+  The Protected Modifier P2
   
 */
 
@@ -9,7 +9,7 @@ class Player {
   constructor(
     public first: string,
     public last: string,
-    private _score: number
+    protected _score: number // (***)
   ) {}
 
   get fullName(): string {
@@ -33,9 +33,8 @@ class Player {
 class SuperPlayer extends Player {
   isAdmin: boolean = true
 
-  // (***)
   maxScore() {
-    this._score = 99999
+    this._score = 99999 // (***)
   }
 }
 
