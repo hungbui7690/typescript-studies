@@ -1,22 +1,9 @@
 "use strict";
 /*
-  Classes and Interfaces P3
+  Creating Abstract Classes P1
   
 */
-class Bike {
-    constructor(color) {
-        this.color = color;
-    }
+// abstract keyword
+class Cat {
 }
-const bike = new Bike('red');
-// (***)
-class Jacket {
-    constructor(brand, color) {
-        this.brand = brand;
-        this.color = color;
-    }
-    print() {
-        console.log(`${this.brand} - ${this.color}`);
-    } // (***)
-}
-const jacket = new Jacket('Prada', 'black');
+new Cat(); // with abstract > we cannot create new instance from that class

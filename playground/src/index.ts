@@ -1,29 +1,9 @@
 /*
-  Classes and Interfaces P3
+  Creating Abstract Classes P1
   
 */
 
-interface Colorful {
-  color: string
-}
+// abstract keyword
+abstract class Cat {}
 
-// (***)
-interface Printable {
-  print(): void
-}
-
-class Bike implements Colorful {
-  constructor(public color: string) {}
-}
-const bike = new Bike('red')
-
-// (***)
-class Jacket implements Colorful, Printable {
-  constructor(public brand: string, public color: string) {}
-
-  print(): void {
-    console.log(`${this.brand} - ${this.color}`)
-  } // (***)
-}
-
-const jacket = new Jacket('Prada', 'black')
+new Cat() // with abstract > we cannot create new instance from that class
