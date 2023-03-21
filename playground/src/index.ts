@@ -1,15 +1,16 @@
 /*
-  Adding Type Constraints P1
+  Adding Type Constraints P2
   
 */
 
-function merge<T, U>(obj1: T, obj2: U) {
+// extends
+function merge<T extends object, U extends object>(obj1: T, obj2: U) {
   return {
     ...obj1,
     ...obj2,
   }
 }
 
-// right now, if we do this > no complain
-const combined = merge({ name: 'nick' }, 9)
-console.log(combined) // check log
+const combined = merge({ name: 'nick' }, { age: 34 })
+
+const combinedX = merge({ name: 'nick' }, 9) // complain
